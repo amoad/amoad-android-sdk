@@ -18,7 +18,7 @@
 
 === モジュール ダウンロード
 [horizontal]
-link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd.jar[libAMoAd.a]::
+link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd.jar[AMoAd.jar]::
 ライブラリ
-link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd_staging.jar[libAMoAd_staging.a]::
+link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd_staging.jar[AMoAd_staging.jar]::
 ライブラリ（ステージング環境用）
