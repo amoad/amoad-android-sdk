@@ -22,3 +22,5 @@ link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd.jar[AMo
 ライブラリ
 link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd_staging.jar[AMoAd_staging.jar]::
 ライブラリ（ステージング環境用）
+link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/Native/javadoc/index.html[javadoc]::
+Javaドキュメント
