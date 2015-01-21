@@ -1,3 +1,9 @@
+.Ver 3.1.0 beta 3 hotfix2
+. isExternalStorageRemovableのバグでNullPointExceptionが発生(一部の端末で発生)
+
+.Ver 3.1.0 beta 3 hotfix1
+. 画像取得の失敗でNullPointException発生
+
 .Ver 3.1.0 beta 3 変更内容
 . 画像のキャッシュを圧縮ファイルで行なう
 . 広告の取得失敗の検知リスナーを設定可能
