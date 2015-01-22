@@ -320,7 +320,7 @@ http://developer.android.com/reference/android/widget/Gallery.html[Gallery] +
 該当するSIDのTAGの広告が更新されます。
 
 ```java
-AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG);
+AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
 ```
 
 === 5.4.ネイティブ広告のクリア
@@ -328,7 +328,7 @@ AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG);
 該当するSIDのTAGの広告がクリアされます。（テキストと画像が消える）
 
 ```java
-AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG);
+AMoAdNativeViewManager.getInstance(context).clearAd(SID, TAG);
 ```
 
 === 6.デバッグ方法
