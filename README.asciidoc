@@ -1,6 +1,31 @@
+.Ver 3.1.0 beta 3 hotfix3
+. 管理画面に設定した広告表示位置の間隔(interval)が効かないバグ対応
+. AMoAdNativeFailureListenerのインターフェース変更
+```java
+//変更後
+pubilc void onFailure(String sid, String tag, View templateView);
+
+//変更前
+pubilc void onFailed(String sid, String tag);
+```
+
+.Ver 3.1.0 beta 3 hotfix2
+. isExternalStorageRemovableのバグでNullPointExceptionが発生(一部の端末で発生)
+
+.Ver 3.1.0 beta 3 hotfix1
+. 画像取得の失敗でNullPointException発生
+
 .Ver 3.1.0 beta 3 変更内容
 . 画像のキャッシュを圧縮ファイルで行なう
 . 広告の取得失敗の検知リスナーを設定可能
+```java
+View view = AMoAdNativeViewManager.getInstance(context).createView(sid, tag, R.layout.template, new AMoAdNativeFailureListener() {
+  @Override
+  public void onFailed(String sid, String tag) {
+    // 広告の取得失敗を検知
+  }
+});
+```
 . 既存のViewに広告情報をセットするrenderAd関数を追加
 . 不要になった広告を明示的にクリアするためのclearAd関数を追加
 
@@ -22,3 +47,5 @@ link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd.jar[AMo
 ライブラリ
 link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd_staging.jar[AMoAd_staging.jar]::
 ライブラリ（ステージング環境用）
+link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/Native/javadoc/index.html[javadoc]::
+Javaドキュメント
