@@ -303,7 +303,7 @@ protected void onCreate(Bundle savedInstanceState) {
 該当するSIDのTAGの広告が更新されます。
 
 ```java
-AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG);
+AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
 ```
 
 === 5.4.ネイティブ広告のクリア
@@ -311,7 +311,7 @@ AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG);
 該当するSIDのTAGの広告がクリアされます。（テキストと画像が消える）
 
 ```java
-AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG);
+AMoAdNativeViewManager.getInstance(context).clearAd(SID, TAG);
 ```
 
 === 5.5.ネイティブ広告の取得失敗を検知する
@@ -320,18 +320,18 @@ AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG);
 createView関数、またはrenderAd関数に失敗検知リスナーを渡す。
 
 ```java
-AMoAdNativeViewManager.getInstance(this).createView(... new AMoAdNativeFailureListener() {
+View view = AMoAdNativeViewManager.getInstance(context).createView(sid, tag, R.layout.template, new AMoAdNativeFailureListener() {
   @Override
-  public void onFailed(String sid, String tag) {
+  public void onFailure(String sid, String tag, View templateView) {
     // 広告の取得失敗を検知
   }
 });
 ```
 
 ```java
-AMoAdNativeViewManager.getInstance(this).renderAd(... new AMoAdNativeFailureListener() {
+AMoAdNativeViewManager.getInstance(context).renderAd(sid, tag, templateView, new AMoAdNativeFailureListener() {
   @Override
-  public void onFailed(String sid, String tag) {
+  public void onFailure(String sid, String tag, View templateView) {
     // 広告の取得失敗を検知
   }
 });
