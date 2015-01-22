@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         ViewGroup container = (ViewGroup) findViewById(R.id.container1);
         View adView = AMoAdNativeViewManager.getInstance(this).createView(SID1, TAG1, R.layout.ad_small, new AMoAdNativeFailureListener() {
             @Override
-            public void onFailed(String sid, String tag) {
+            public void onFailure(String sid, String tag, View templateView) {
                 // 広告の取得失敗
             }
         });
