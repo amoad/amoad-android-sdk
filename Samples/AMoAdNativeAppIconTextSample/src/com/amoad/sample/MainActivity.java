@@ -12,8 +12,8 @@ import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends Activity {
     private static final String TAG = "tag";
-    // TODO 管理画面から発行されるネイティブ(APP)のアイコン画像テキスト型のSIDを設定してください
-    private static final String SID = "管理画面から発行されるネイティブ(APP)のアイコン画像テキスト型のSIDを設定してください";
+    // TODO 管理画面から発行されるネイティブ(APP)のアイコン画像テキスト型のsidを設定してください
+    private static final String SID = "管理画面から発行されるネイティブ(APP)のアイコン画像テキスト型のsidを設定してください";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
