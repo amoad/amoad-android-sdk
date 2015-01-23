@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/IconImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewIconImage" />
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:tag="AMoAdNativeViewServiceName" />
+
+    <ImageView
+        android:id="@+id/MainImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IconImage"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewMainImage" />
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MainImage"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort" />
+
+    <TextView
+        android:id="@+id/TitleLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleShort"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleLong" />
+
+</RelativeLayout>
