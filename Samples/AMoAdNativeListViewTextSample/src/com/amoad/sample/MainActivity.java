@@ -11,8 +11,8 @@ import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends ListActivity {
     private static final String TAG = "tag";
-    // TODO 管理画面から発行されるSIDを設定してください
-    private static final String SID = "管理画面から発行されるSIDを設定してください";
+    // TODO 管理画面から発行されるリストビューの一行テキスト型のSIDを設定してください
+    private static final String SID = "管理画面から発行されるリストビューの一行テキスト型のSIDを設定してください";
     // TODO 管理画面に設定した「広告表示位置」の「開始位置」を設定してください
     private static final int BEGIN_INDEX = 1;
     // TODO 管理画面に設定した「広告表示位置」の「間隔」を設定してください
