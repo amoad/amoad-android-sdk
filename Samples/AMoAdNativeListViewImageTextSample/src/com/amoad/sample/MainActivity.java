@@ -7,10 +7,12 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
+import com.amoad.AMoAdLogger;
+import com.amoad.AMoAdLoggerListener;
 import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends ListActivity {
-    private static final String TAG = "tag";
+    private static final String TAG = "ad-01";
     // TODO 管理画面から発行されるリストビューのメイン画像テキスト型のsidを設定してください
     private static final String SID = "管理画面から発行されるリストビューのメイン画像テキスト型のsidを設定してください";
     // TODO 管理画面に設定した「広告表示位置」の「開始位置」を設定してください
@@ -23,6 +25,14 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AMoAdLogger.getInstance().setEnabled(true);
+        AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+            @Override
+            public void onLog(int level, String tag, String msg, Throwable throwable) {
+                // ログ確認
+            }
+        });
 
         AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, BEGIN_INDEX, INTERVAL, true, true);
 
