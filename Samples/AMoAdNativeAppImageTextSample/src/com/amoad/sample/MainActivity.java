@@ -7,11 +7,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.amoad.AMoAdLogger;
+import com.amoad.AMoAdLoggerListener;
 import com.amoad.AMoAdNativeFailureListener;
 import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends Activity {
-    private static final String TAG = "tag";
+    private static final String TAG = "ad-01";
     // TODO 管理画面から発行されるネイティブ(APP)のメイン画像テキスト型のsidを設定してください
     private static final String SID = "管理画面から発行されるネイティブ(APP)のメイン画像テキスト型のsidを設定してください";
 
@@ -19,6 +21,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AMoAdLogger.getInstance().setEnabled(true);
+        AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+            @Override
+            public void onLog(int level, String tag, String msg, Throwable throwable) {
+                // ログ確認
+            }
+        });
 
         AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, true, true);
 
