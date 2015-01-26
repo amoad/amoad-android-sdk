@@ -13,7 +13,8 @@ import com.amoad.AMoAdNativeFailureListener;
 import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends Activity {
-    private static final String TAG = "ad-01";
+    private static final String TAG1 = "ad-01";
+    private static final String TAG2 = "ad-02";
     // TODO 管理画面から発行されるネイティブ(APP)のメイン画像テキスト型のsidを設定してください
     private static final String SID = "管理画面から発行されるネイティブ(APP)のメイン画像テキスト型のsidを設定してください";
 
@@ -30,16 +31,27 @@ public class MainActivity extends Activity {
             }
         });
 
-        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, true, true);
+        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG1, true);
+        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG2, true);
 
-        ViewGroup container = (ViewGroup) findViewById(R.id.container);
-        View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.template, new AMoAdNativeFailureListener() {
+        // createViewの使い方
+        ViewGroup containe = (ViewGroup) findViewById(R.id.container);
+        View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG1, R.layout.template, new AMoAdNativeFailureListener() {
             @Override
             public void onFailure(String sid, String tag, View templateView) {
                 // 広告の取得失敗
             }
         });
-        container.addView(adView);
+        containe.addView(adView);
+
+        // renderAdの使い方
+        View templateView = findViewById(R.id.templateView);
+        AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView, new AMoAdNativeFailureListener() {
+            @Override
+            public void onFailure(String sid, String tag, View templateView) {
+                // 広告の取得失敗
+            }
+        });
     }
 
     @Override
@@ -60,10 +72,12 @@ public class MainActivity extends Activity {
     }
 
     void update() {
-        AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG);
+        AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG1);
+        AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG2);
     }
 
     void clear() {
-        AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG);
+        AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG1);
+        AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG2);
     }
 }
