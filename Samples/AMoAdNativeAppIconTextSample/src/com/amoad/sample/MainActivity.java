@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
         });
 
         AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG1, true);
-        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG2, true);
+        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG2, false);
 
         // createViewの使い方
         ViewGroup containe = (ViewGroup) findViewById(R.id.container);
