@@ -1,3 +1,6 @@
+Ver 3.1.0 beta 4 hotfix2::
+. キャッシュされた時間切れの広告が表示されるバグ対応
+
 Ver 3.1.0 beta 4 hotfix1::
 . ネイティブApp型の広告のImpressionが発生しないバグ対応
 
