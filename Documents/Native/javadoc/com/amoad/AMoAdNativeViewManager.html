@@ -230,7 +230,7 @@ extends Object</pre>
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-">prepareAd</a></span>(String&nbsp;sid,
          String&nbsp;tag)</code>
-<div class="block">広告準備（表示方式:ネイティブ 表示広告種類:1行テキスト）.</div>
+<div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -238,7 +238,7 @@ extends Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-boolean-">prepareAd</a></span>(String&nbsp;sid,
          String&nbsp;tag,
          boolean&nbsp;iconPreloading)</code>
-<div class="block">広告準備（表示方式:ネイティブ 表示広告種類:メイン画像+テキスト）.</div>
+<div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -247,7 +247,7 @@ extends Object</pre>
          String&nbsp;tag,
          boolean&nbsp;iconPreloading,
          boolean&nbsp;imagePreloading)</code>
-<div class="block">広告準備（表示方式:ネイティブ 表示広告種類:メイン画像+テキスト）.</div>
+<div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -256,7 +256,7 @@ extends Object</pre>
          String&nbsp;tag,
          int&nbsp;defaultBeginIndex,
          int&nbsp;defaultInterval)</code>
-<div class="block">広告準備（表示方式:リストビュー 表示広告種類:1行テキスト）.</div>
+<div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -266,7 +266,7 @@ extends Object</pre>
          int&nbsp;defaultBeginIndex,
          int&nbsp;defaultInterval,
          boolean&nbsp;iconPreloading)</code>
-<div class="block">広告準備（表示方式:リストビュー 表示広告種類:アイコン画像+テキスト）.</div>
+<div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -277,7 +277,7 @@ extends Object</pre>
          int&nbsp;defaultInterval,
          boolean&nbsp;iconPreloading,
          boolean&nbsp;imagePreloading)</code>
-<div class="block">広告準備（表示方式:リストビュー 表示広告種類:メイン画像+テキスト）.</div>
+<div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -427,12 +427,19 @@ extends Object</pre>
 <li class="blockList">
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag)</pre>
-<div class="block">広告準備（表示方式:ネイティブ 表示広告種類:1行テキスト）.</div>
+                      String&nbsp;tag)
+               throws IllegalArgumentException</pre>
+<div class="block">広告を準備する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)/1行テキスト]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
-<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>tag</code> - 同じsidを複数のViewで使用する場合、一意に管理する為に使用する</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
@@ -444,13 +451,20 @@ extends Object</pre>
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
                       String&nbsp;tag,
-                      boolean&nbsp;iconPreloading)</pre>
-<div class="block">広告準備（表示方式:ネイティブ 表示広告種類:メイン画像+テキスト）.</div>
+                      boolean&nbsp;iconPreloading)
+               throws IllegalArgumentException</pre>
+<div class="block">広告を準備する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)/アイコン画像+テキスト]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
-<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコン画像を読み込む</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
@@ -463,14 +477,21 @@ extends Object</pre>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
                       String&nbsp;tag,
                       boolean&nbsp;iconPreloading,
-                      boolean&nbsp;imagePreloading)</pre>
-<div class="block">広告準備（表示方式:ネイティブ 表示広告種類:メイン画像+テキスト）.</div>
+                      boolean&nbsp;imagePreloading)
+               throws IllegalArgumentException</pre>
+<div class="block">広告を準備する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)/メイン画像+テキスト]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
-<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコン画像を読み込む</dd>
 <dd><code>imagePreloading</code> - 自動的にメイン画像を読み込む</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
@@ -483,14 +504,21 @@ extends Object</pre>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
                       String&nbsp;tag,
                       int&nbsp;defaultBeginIndex,
-                      int&nbsp;defaultInterval)</pre>
-<div class="block">広告準備（表示方式:リストビュー 表示広告種類:1行テキスト）.</div>
+                      int&nbsp;defaultInterval)
+               throws IllegalArgumentException</pre>
+<div class="block">広告を準備する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[リストビュー/1行テキスト]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
-<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>tag</code> - 同じsidを複数のViewで使用する場合、一意に管理する為に使用する</dd>
-<dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)</dd>
-<dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)</dd>
+<dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
+<dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
@@ -504,15 +532,22 @@ extends Object</pre>
                       String&nbsp;tag,
                       int&nbsp;defaultBeginIndex,
                       int&nbsp;defaultInterval,
-                      boolean&nbsp;iconPreloading)</pre>
-<div class="block">広告準備（表示方式:リストビュー 表示広告種類:アイコン画像+テキスト）.</div>
+                      boolean&nbsp;iconPreloading)
+               throws IllegalArgumentException</pre>
+<div class="block">広告を準備する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[リストビュー/アイコン画像+テキスト]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
-<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
-<dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)</dd>
-<dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)</dd>
+<dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
+<dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコンを読み込む</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
@@ -527,16 +562,23 @@ extends Object</pre>
                       int&nbsp;defaultBeginIndex,
                       int&nbsp;defaultInterval,
                       boolean&nbsp;iconPreloading,
-                      boolean&nbsp;imagePreloading)</pre>
-<div class="block">広告準備（表示方式:リストビュー 表示広告種類:メイン画像+テキスト）.</div>
+                      boolean&nbsp;imagePreloading)
+               throws IllegalArgumentException</pre>
+<div class="block">広告を準備する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[リストビュー/メイン画像+テキスト]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
-<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
-<dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)</dd>
-<dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)</dd>
+<dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
+<dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコン画像を読み込む</dd>
 <dd><code>imagePreloading</code> - 自動的にメイン画像を読み込む</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
@@ -550,7 +592,11 @@ extends Object</pre>
                                  String&nbsp;tag,
                                  Adapter&nbsp;originalAdapter,
                                  int&nbsp;viewResourceId)</pre>
-<div class="block">広告を含んだデータソース生成. ユーザーが使用していたアダプターをデコレートし,ネイティブ広告表示用のAdapterを生成する.</div>
+<div class="block">広告を含んだデータソース生成. ユーザーが使用していたアダプターをデコレートし,ネイティブ広告表示用のAdapterを生成する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[リストビュー]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
@@ -573,7 +619,11 @@ extends Object</pre>
 <pre>public&nbsp;View&nbsp;createView(String&nbsp;sid,
                        String&nbsp;tag,
                        int&nbsp;viewResourceId)</pre>
-<div class="block">ネイティブ広告ビューを生成して返却する.</div>
+<div class="block">ネイティブ広告ビューを生成して返却する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
@@ -596,7 +646,11 @@ extends Object</pre>
                        String&nbsp;tag,
                        int&nbsp;viewResourceId,
                        <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)</pre>
-<div class="block">ネイティブ広告ビューを生成して返却する.</div>
+<div class="block">ネイティブ広告ビューを生成して返却する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
@@ -619,7 +673,11 @@ extends Object</pre>
 <pre>public&nbsp;void&nbsp;renderAd(String&nbsp;sid,
                      String&nbsp;tag,
                      View&nbsp;templateView)</pre>
-<div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
+<div class="block">テンプレートビューにネイティブ広告を埋め込む.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
@@ -638,7 +696,11 @@ extends Object</pre>
                      String&nbsp;tag,
                      View&nbsp;templateView,
                      <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)</pre>
-<div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
+<div class="block">テンプレートビューにネイティブ広告を埋め込む.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
@@ -659,7 +721,12 @@ extends Object</pre>
 <div class="block">現在表示している広告を更新する.
  想定する利用箇所は,プルリフレッシュなどの操作で表示中のユーザコンテンツをリフレッシュする際に広告表示も最新化したい場合などである.
  なお,最下段までスクロールした際にユーザーコンテンツを追加取得・表示する場合などでclearAdを実施してしまうと
- ,既存表示中の広告を全て最新化してしまうため注意が必要である.</div>
+ ,既存表示中の広告を全て最新化してしまうため注意が必要である.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)]</li>
+ <li>[リストビュー]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
@@ -675,7 +742,11 @@ extends Object</pre>
 <h4>clearAd</h4>
 <pre>public&nbsp;void&nbsp;clearAd(String&nbsp;sid,
                     String&nbsp;tag)</pre>
-<div class="block">現在表示している広告のメモリを開放する.</div>
+<div class="block">現在表示している広告のメモリを開放する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[ネイティブ(App)]</li>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
