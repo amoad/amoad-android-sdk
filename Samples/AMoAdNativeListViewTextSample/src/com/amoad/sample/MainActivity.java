@@ -48,7 +48,6 @@ public class MainActivity extends ListActivity {
         menu.add("add");
         menu.add("update");
         menu.add("delete");
-        menu.add("clear");
         return true;
     }
 
@@ -60,8 +59,6 @@ public class MainActivity extends ListActivity {
             update();
         } else if ("delete".equals(item.getTitle())) {
             delete();
-        } else if ("clear".equals(item.getTitle())) {
-            clear();
         }
         return true;
     }
@@ -77,10 +74,6 @@ public class MainActivity extends ListActivity {
         mAdapter.clear();
         AMoAdNativeViewManager.getInstance(this).updateAd(SID, TAG);
         add();
-    }
-
-    void clear() {
-        AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG);
     }
 
     void delete() {

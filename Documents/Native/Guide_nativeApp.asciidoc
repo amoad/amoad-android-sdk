@@ -43,7 +43,7 @@ image:images/add_google_play_services.png[width="300px"]
 
 
 === 3.AMoAd SDKの組み込み
-プロジェクト内のlibsフォルダに__AMoAd_{Version-1dight}_{Version-2dight}_{Version-3dight}{Version-description}.jar__を追加します。
+プロジェクト内のlibsフォルダに__AMoAd.jar__を追加します。
 [TIP]
 image:images/add_jar.png[width="200px"]
 

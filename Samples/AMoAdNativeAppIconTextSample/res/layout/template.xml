@@ -10,7 +10,7 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerInside"
         android:tag="AMoAdNativeViewIconImage" />
 
     <TextView
@@ -22,7 +22,7 @@
         android:layout_toRightOf="@+id/IconImage"
         android:ellipsize="end"
         android:singleLine="true"
-        android:tag="AMoAdNativeViewTitleShort"/>
+        android:tag="AMoAdNativeViewTitleShort" />
 
     <TextView
         android:id="@+id/TitleLong"
@@ -33,7 +33,7 @@
         android:layout_toRightOf="@+id/IconImage"
         android:ellipsize="end"
         android:singleLine="true"
-        android:tag="AMoAdNativeViewTitleLong"/>
+        android:tag="AMoAdNativeViewTitleLong" />
 
     <TextView
         android:id="@+id/ServiceName"
@@ -43,6 +43,6 @@
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/IconImage"
         android:ellipsize="end"
-        android:tag="AMoAdNativeViewServiceName"/>
+        android:tag="AMoAdNativeViewServiceName" />
 
 </RelativeLayout>
