@@ -34,7 +34,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, BEGIN_INDEX, INTERVAL, true);
+        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, BEGIN_INDEX, INTERVAL, true);
 
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
         add();
