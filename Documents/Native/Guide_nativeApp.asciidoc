@@ -247,7 +247,7 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
 
-  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG);
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID);
 
   View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.native_text);
 
@@ -274,7 +274,7 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
 
-  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, true);
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, true);
 
   View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.native_icon);
 
@@ -290,7 +290,7 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
 
-  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, true, true);
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, true, true);
 
   View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.native_image);
 
@@ -314,6 +314,10 @@ AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
 AMoAdNativeViewManager.getInstance(context).clearAd(SID, TAG);
 ```
 
+該当するSIDの広告がすべてクリアされます。（テキストと画像が消える）
+```java
+AMoAdNativeViewManager.getInstance(context).clearAds(SID);
+```
 === 5.5.ネイティブ広告の取得失敗を検知する
 
 該当するSIDのTAGの広告の取得失敗を検知する。 +
@@ -353,7 +357,7 @@ protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
 
-  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG, true, true);
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, true, true);
 
   View templateView = findByViewId(R.id.templeteView);
 

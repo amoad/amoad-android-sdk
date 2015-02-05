@@ -1,3 +1,21 @@
+Ver 3.1.0 beta 5::
+. クリック、IMPのログを出力する
+. 広告の新しいクリア機能の追加
+. AMoAdNativeViewManagerクラスのインタフェース変更
+
+.広告の新しいクリア機能
+```java
+AMoAdNativeViewManager#clearAds(String sid)
+```
+.インタフェース変更
+```java
+//変更後
+AMoAdNativeViewManager#prepareAd(String sid, ...)
+
+//変更前
+AMoAdNativeViewManager#prepareAd(String sid, String tag, ...)
+```
+
 Ver 3.1.0 beta 4 hotfix3::
 . リストビュー型のclearAdのバグ対応
 

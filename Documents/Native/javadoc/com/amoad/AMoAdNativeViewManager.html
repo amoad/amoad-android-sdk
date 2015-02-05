@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -122,7 +122,7 @@ extends Object</pre>
  <li><a href="../../com/amoad/AMoAdNativeViewManager.html#AMOAD_NATIVE_VIEW_SERVICE_NAME"><code>AMOAD_NATIVE_VIEW_SERVICE_NAME</code></a></li>
  </ul>
  
- クラス自体はシングルトンで管理している。このインスタンスを使用して,広告表示に必要となる各メソッド（<a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-"><code>prepareAd(java.lang.String, java.lang.String)</code></a>,
+ クラス自体はシングルトンで管理している。このインスタンスを使用して,広告表示に必要となる各メソッド（<a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-"><code>prepareAd(java.lang.String)</code></a>,
  <a href="../../com/amoad/AMoAdNativeViewManager.html#createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-"><code>createAdapter(java.lang.String, java.lang.String, android.widget.Adapter, int)</code></a>, <a href="../../com/amoad/AMoAdNativeViewManager.html#updateAd-java.lang.String-java.lang.String-"><code>updateAd(java.lang.String, java.lang.String)</code></a>）を利用する。</div>
 </li>
 </ul>
@@ -195,6 +195,12 @@ extends Object</pre>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#clearAds-java.lang.String-">clearAds</a></span>(String&nbsp;sid)</code>
+<div class="block">現在表示している広告のメモリを開放する.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>BaseAdapter</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-">createAdapter</a></span>(String&nbsp;sid,
              String&nbsp;tag,
@@ -203,7 +209,7 @@ extends Object</pre>
 <div class="block">広告を含んだデータソース生成.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-">createView</a></span>(String&nbsp;sid,
           String&nbsp;tag,
@@ -211,7 +217,7 @@ extends Object</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeFailureListener-">createView</a></span>(String&nbsp;sid,
           String&nbsp;tag,
@@ -220,59 +226,53 @@ extends Object</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../com/amoad/AMoAdNativeViewManager.html" title="com.amoad内のクラス">AMoAdNativeViewManager</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#getInstance-android.content.Context-">getInstance</a></span>(Context&nbsp;context)</code>
 <div class="block">広告取得・表示用Manager管理.シングルトンインスタンスを取得する.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-">prepareAd</a></span>(String&nbsp;sid,
-         String&nbsp;tag)</code>
-<div class="block">広告を準備する.</div>
-</td>
-</tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-boolean-">prepareAd</a></span>(String&nbsp;sid,
-         String&nbsp;tag,
-         boolean&nbsp;iconPreloading)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-">prepareAd</a></span>(String&nbsp;sid)</code>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-boolean-boolean-">prepareAd</a></span>(String&nbsp;sid,
-         String&nbsp;tag,
-         boolean&nbsp;iconPreloading,
-         boolean&nbsp;imagePreloading)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-boolean-">prepareAd</a></span>(String&nbsp;sid,
+         boolean&nbsp;iconPreloading)</code>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-int-int-">prepareAd</a></span>(String&nbsp;sid,
-         String&nbsp;tag,
-         int&nbsp;defaultBeginIndex,
-         int&nbsp;defaultInterval)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-boolean-boolean-">prepareAd</a></span>(String&nbsp;sid,
+         boolean&nbsp;iconPreloading,
+         boolean&nbsp;imagePreloading)</code>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-int-int-boolean-">prepareAd</a></span>(String&nbsp;sid,
-         String&nbsp;tag,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-int-int-">prepareAd</a></span>(String&nbsp;sid,
+         int&nbsp;defaultBeginIndex,
+         int&nbsp;defaultInterval)</code>
+<div class="block">広告を準備する.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-int-int-boolean-">prepareAd</a></span>(String&nbsp;sid,
          int&nbsp;defaultBeginIndex,
          int&nbsp;defaultInterval,
          boolean&nbsp;iconPreloading)</code>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-java.lang.String-int-int-boolean-boolean-">prepareAd</a></span>(String&nbsp;sid,
-         String&nbsp;tag,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-int-int-boolean-boolean-">prepareAd</a></span>(String&nbsp;sid,
          int&nbsp;defaultBeginIndex,
          int&nbsp;defaultInterval,
          boolean&nbsp;iconPreloading,
@@ -280,7 +280,7 @@ extends Object</pre>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-">renderAd</a></span>(String&nbsp;sid,
         String&nbsp;tag,
@@ -288,7 +288,7 @@ extends Object</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeFailureListener-">renderAd</a></span>(String&nbsp;sid,
         String&nbsp;tag,
@@ -297,7 +297,7 @@ extends Object</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#updateAd-java.lang.String-java.lang.String-">updateAd</a></span>(String&nbsp;sid,
         String&nbsp;tag)</code>
@@ -420,14 +420,13 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="prepareAd-java.lang.String-java.lang.String-">
+<a name="prepareAd-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareAd</h4>
-<pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag)
+<pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid)
                throws IllegalArgumentException</pre>
 <div class="block">広告を準備する.
  <p>該当広告タイプ</p>
@@ -437,20 +436,18 @@ extends Object</pre>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
-<dd><code>tag</code> - 同じsidを複数のViewで使用する場合、一意に管理する為に使用する</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
 <dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
-<a name="prepareAd-java.lang.String-java.lang.String-boolean-">
+<a name="prepareAd-java.lang.String-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag,
                       boolean&nbsp;iconPreloading)
                throws IllegalArgumentException</pre>
 <div class="block">広告を準備する.
@@ -461,21 +458,19 @@ extends Object</pre>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
-<dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコン画像を読み込む</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
 <dd><code>IllegalArgumentException</code></dd>
 </dl>
 </li>
 </ul>
-<a name="prepareAd-java.lang.String-java.lang.String-boolean-boolean-">
+<a name="prepareAd-java.lang.String-boolean-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag,
                       boolean&nbsp;iconPreloading,
                       boolean&nbsp;imagePreloading)
                throws IllegalArgumentException</pre>
@@ -487,7 +482,6 @@ extends Object</pre>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
-<dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコン画像を読み込む</dd>
 <dd><code>imagePreloading</code> - 自動的にメイン画像を読み込む</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
@@ -495,14 +489,13 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="prepareAd-java.lang.String-java.lang.String-int-int-">
+<a name="prepareAd-java.lang.String-int-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag,
                       int&nbsp;defaultBeginIndex,
                       int&nbsp;defaultInterval)
                throws IllegalArgumentException</pre>
@@ -514,7 +507,6 @@ extends Object</pre>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
-<dd><code>tag</code> - 同じsidを複数のViewで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
@@ -522,14 +514,13 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="prepareAd-java.lang.String-java.lang.String-int-int-boolean-">
+<a name="prepareAd-java.lang.String-int-int-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag,
                       int&nbsp;defaultBeginIndex,
                       int&nbsp;defaultInterval,
                       boolean&nbsp;iconPreloading)
@@ -542,7 +533,6 @@ extends Object</pre>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
-<dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコンを読み込む</dd>
@@ -551,14 +541,13 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="prepareAd-java.lang.String-java.lang.String-int-int-boolean-boolean-">
+<a name="prepareAd-java.lang.String-int-int-boolean-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareAd</h4>
 <pre>public&nbsp;void&nbsp;prepareAd(String&nbsp;sid,
-                      String&nbsp;tag,
                       int&nbsp;defaultBeginIndex,
                       int&nbsp;defaultInterval,
                       boolean&nbsp;iconPreloading,
@@ -572,7 +561,6 @@ extends Object</pre>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID、不正の場合はIllegalArgumentExceptionが発生する</dd>
-<dd><code>tag</code> - 同じsidを複数のViwで使用する場合、一意に管理する為に使用する</dd>
 <dd><code>defaultBeginIndex</code> - 広告の開始位置(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>defaultInterval</code> - 広告の表示間隔(初回,サーバから取得するまでのデフォルト値)、不正の場合はIllegalArgumentExceptionが発生する</dd>
 <dd><code>iconPreloading</code> - 自動的にアイコン画像を読み込む</dd>
@@ -591,7 +579,8 @@ extends Object</pre>
 <pre>public&nbsp;BaseAdapter&nbsp;createAdapter(String&nbsp;sid,
                                  String&nbsp;tag,
                                  Adapter&nbsp;originalAdapter,
-                                 int&nbsp;viewResourceId)</pre>
+                                 int&nbsp;viewResourceId)
+                          throws IllegalStateException</pre>
 <div class="block">広告を含んだデータソース生成. ユーザーが使用していたアダプターをデコレートし,ネイティブ広告表示用のAdapterを生成する.
  <p>該当広告タイプ</p>
  <ul>
@@ -606,7 +595,7 @@ extends Object</pre>
 <dt><span class="returnLabel">戻り値:</span></dt>
 <dd>BaseAdapter 広告を含んだデータソースを返却する</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
-<dd><code>IllegalStateException</code> - prepareAdで未登録のsidとtagの組み合わせを指定された場合に例外をスローする</dd>
+<dd><code>IllegalStateException</code></dd>
 </dl>
 </li>
 </ul>
@@ -618,7 +607,8 @@ extends Object</pre>
 <h4>createView</h4>
 <pre>public&nbsp;View&nbsp;createView(String&nbsp;sid,
                        String&nbsp;tag,
-                       int&nbsp;viewResourceId)</pre>
+                       int&nbsp;viewResourceId)
+                throws IllegalStateException</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.
  <p>該当広告タイプ</p>
  <ul>
@@ -632,7 +622,7 @@ extends Object</pre>
 <dt><span class="returnLabel">戻り値:</span></dt>
 <dd>ネイティブ広告ビュー</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
-<dd><code>IllegalStateException</code> - prepareAdで未登録のsidとtagの組み合わせを指定された場合に例外をスローする</dd>
+<dd><code>IllegalStateException</code></dd>
 </dl>
 </li>
 </ul>
@@ -645,7 +635,8 @@ extends Object</pre>
 <pre>public&nbsp;View&nbsp;createView(String&nbsp;sid,
                        String&nbsp;tag,
                        int&nbsp;viewResourceId,
-                       <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)</pre>
+                       <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)
+                throws IllegalStateException</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.
  <p>該当広告タイプ</p>
  <ul>
@@ -660,7 +651,7 @@ extends Object</pre>
 <dt><span class="returnLabel">戻り値:</span></dt>
 <dd>ネイティブ広告ビュー</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
-<dd><code>IllegalStateException</code> - prepareAdで未登録のsidとtagの組み合わせを指定された場合に例外をスローする</dd>
+<dd><code>IllegalStateException</code></dd>
 </dl>
 </li>
 </ul>
@@ -672,7 +663,8 @@ extends Object</pre>
 <h4>renderAd</h4>
 <pre>public&nbsp;void&nbsp;renderAd(String&nbsp;sid,
                      String&nbsp;tag,
-                     View&nbsp;templateView)</pre>
+                     View&nbsp;templateView)
+              throws IllegalStateException</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.
  <p>該当広告タイプ</p>
  <ul>
@@ -683,6 +675,8 @@ extends Object</pre>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>templateView</code> - テンプレートビュー</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalStateException</code></dd>
 </dl>
 </li>
 </ul>
@@ -695,7 +689,8 @@ extends Object</pre>
 <pre>public&nbsp;void&nbsp;renderAd(String&nbsp;sid,
                      String&nbsp;tag,
                      View&nbsp;templateView,
-                     <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)</pre>
+                     <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)
+              throws IllegalStateException</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.
  <p>該当広告タイプ</p>
  <ul>
@@ -707,6 +702,8 @@ extends Object</pre>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>templateView</code> - テンプレートビュー</dd>
 <dd><code>failureListener</code> - 広告取得の成功・失敗を通知するリスナー</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalStateException</code></dd>
 </dl>
 </li>
 </ul>
@@ -737,7 +734,7 @@ extends Object</pre>
 <a name="clearAd-java.lang.String-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>clearAd</h4>
 <pre>public&nbsp;void&nbsp;clearAd(String&nbsp;sid,
@@ -751,6 +748,20 @@ extends Object</pre>
 <dt><span class="paramLabel">パラメータ:</span></dt>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
+</dl>
+</li>
+</ul>
+<a name="clearAds-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>clearAds</h4>
+<pre>public&nbsp;void&nbsp;clearAds(String&nbsp;sid)</pre>
+<div class="block">現在表示している広告のメモリを開放する.</div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>sid</code> - 管理画面から取得したID</dd>
 </dl>
 </li>
 </ul>

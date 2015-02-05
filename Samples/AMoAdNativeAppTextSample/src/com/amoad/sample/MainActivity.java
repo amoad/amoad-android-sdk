@@ -31,8 +31,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG1);
-        AMoAdNativeViewManager.getInstance(this).prepareAd(SID, TAG2);
+        AMoAdNativeViewManager.getInstance(this).prepareAd(SID);
 
         // createViewの使い方
         ViewGroup containe = (ViewGroup) findViewById(R.id.container);
@@ -58,6 +57,7 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add("update");
         menu.add("clear");
+        menu.add("clear all");
         return true;
     }
 
@@ -67,6 +67,8 @@ public class MainActivity extends Activity {
             update();
         } else if ("clear".equals(item.getTitle())) {
             clear();
+        } else if ("clear all".equals(item.getTitle())) {
+            clearAll();
         }
         return true;
     }
@@ -79,5 +81,9 @@ public class MainActivity extends Activity {
     void clear() {
         AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG1);
         AMoAdNativeViewManager.getInstance(this).clearAd(SID, TAG2);
+    }
+
+    void clearAll() {
+        AMoAdNativeViewManager.getInstance(this).clearAds(SID);
     }
 }
