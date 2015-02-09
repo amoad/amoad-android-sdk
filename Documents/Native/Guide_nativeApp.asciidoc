@@ -1,11 +1,6 @@
-Main Header
-===========
-:Version-1dight: 3
-:Version-2dight: 1
-:Version-3dight: 0
-:Version-description: _beta_03_stage
+:Version: 3.1.0 beta 5
 
-== AMoAdネイティブ広告 SDK Guide for Android
+== AMoAdネイティブ広告 SDK{Version} Guide for Android
 
 === 1.サポート対象
 Android OS 2.3.3（API Level 10）以上がサポート対象です。
