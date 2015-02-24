@@ -1,3 +1,40 @@
+Ver 3.1.0 beta 6::
+. クリック領域の設定追加
+. リストビュー型の性能改善
+. AMoAdLoggerの関数変更
+
+.クリック領域の設定:「android:tag="AMoAdNativeViewLink"」でクリックビューを設定する。
+```xml
+// 広告のテンプレートレイアウトxml
+<RelativeLayout ... >
+    ...
+    <Button
+        ...
+        android:tag="AMoAdNativeViewLink"
+        android:text="アプリをダウンロードする" />
+    ...
+</RelativeLayout>
+```
+
+
+.AMoAdLoggerの関数変更<1>
+```java
+// 変更前
+AMoAdNativeViewManager#addAMoAdLoggerListener(listener);
+
+// 変更後
+AMoAdNativeViewManager#setAMoAdLoggerListener(listener);
+```
+
+.AMoAdLoggerの関数変更<2>
+```java
+// 変更前
+AMoAdNativeViewManager#removeAMoAdLoggerListener(listener);
+
+// 変更後
+AMoAdNativeViewManager#setAMoAdLoggerListener(null);
+```
+
 Ver 3.1.0 beta 5 hotfix1::
 . 広告をclearAdしても広告のクリックができるバグ対応
 
@@ -12,11 +49,11 @@ AMoAdNativeViewManager#clearAds(String sid)
 ```
 .インタフェース変更
 ```java
-//変更後
-AMoAdNativeViewManager#prepareAd(String sid, ...)
-
 //変更前
 AMoAdNativeViewManager#prepareAd(String sid, String tag, ...)
+
+//変更後
+AMoAdNativeViewManager#prepareAd(String sid, ...)
 ```
 
 Ver 3.1.0 beta 4 hotfix3::
@@ -36,11 +73,11 @@ Ver 3.1.0 beta 3 hotfix3::
 . 管理画面に設定した広告表示位置の間隔(interval)が効かないバグ対応
 . AMoAdNativeFailureListenerのインターフェース変更
 ```java
-//変更後
-pubilc void onFailure(String sid, String tag, View templateView);
-
 //変更前
 pubilc void onFailed(String sid, String tag);
+
+//変更後
+pubilc void onFailure(String sid, String tag, View templateView);
 ```
 
 Ver 3.1.0 beta 3 hotfix2::

@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         AMoAdLogger.getInstance().setEnabled(true);
-        AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+        AMoAdLogger.getInstance().setAMoAdLoggerListener(new AMoAdLoggerListener() {
             @Override
             public void onLog(int level, String tag, String msg, Throwable throwable) {
                 // ログ確認
