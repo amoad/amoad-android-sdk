@@ -27,7 +27,7 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         AMoAdLogger.getInstance().setEnabled(true);
-        AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+        AMoAdLogger.getInstance().setAMoAdLoggerListener(new AMoAdLoggerListener() {
             @Override
             public void onLog(int level, String tag, String msg, Throwable throwable) {
                 // ログ確認
