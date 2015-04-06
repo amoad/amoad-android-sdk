@@ -1,4 +1,4 @@
-:Version: 3.2.2
+:Version: 3.2.3
 
 == AMoAdネイティブ広告 SDK{Version} Guide for Android
 
@@ -235,7 +235,7 @@ image:images/add_jar.png[width="200px"]
 ```
 
 [TIP]
-クリック領域の設定 : + 
+クリック領域の設定 : +
 「android:tag="AMoAdNativeViewLink"」でクリック領域の設定ができます。 +
 指定しない場合はレイアウト全体がクリック領域になります。 +
 
