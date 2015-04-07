@@ -1,10 +1,24 @@
 :Version: 3.2.3
 
-== AMoAdネイティブ広告 SDK{Version} Guide for Android
+== AMoAdネイティブ広告 SDK{Version} Guide for Android - listView
 
+=== 目次
+** <<i, 1.サポート対象>>
+** <<ii, 2.Google Player Servicesの組み込み(Eclipse版)>>
+** <<iii, 3.AMoAd SDKの組み込み>>
+** <<iv, 4.マニフェスト設定>>
+** <<v, 5.ネイティブ広告の導入>>
+*** <<v_i, 5.1.広告用のレイアウト作成>>
+*** <<v_ii, 5.2.広告の表示>>
+*** <<v_iii, 5.3.広告の更新>>
+** <<vi, 6.デバッグ方法>>
+
+''''
+[[i]]
 === 1.サポート対象
 Android OS 2.3.3（API Level 10）以上がサポート対象です。
 
+[[ii]]
 === 2.Google Player Servicesの組み込み(Eclipse版)
 .Eclipse以外はGoogleドキュメントを参考してください
 [NOTE]
@@ -37,11 +51,13 @@ image:images/add_google_play_services.png[width="300px"]
 .. 「ok」ボタンをクリックする
 
 
+[[iii]]
 === 3.AMoAd SDKの組み込み
 プロジェクト内のlibsフォルダに__AMoAd.jar__を追加します。
 [TIP]
 image:images/add_jar.png[width="200px"]
 
+[[iv]]
 === 4.マニフェスト設定
 
 . &lt;uses-permission android:name="android.permission.INTERNET"/&gt;を追加する
@@ -64,6 +80,7 @@ image:images/add_jar.png[width="200px"]
     </application>
 </manifest>
 ```
+[[v]]
 === 5.ネイティブ広告の導入
 表示広告種類は、画像の有無、テキストの長さなどによって、以下の3タイプあります
 
@@ -77,6 +94,7 @@ image:images/add_jar.png[width="200px"]
 .1+| メイン画像＋テキスト
 |===
 
+[[v_i]]
 === 5.1.広告用のレイアウト作成
 
 .下記表を参考にレイアウトを作成する
@@ -252,7 +270,8 @@ image:images/add_jar.png[width="200px"]
     ...
 </RelativeLayout>
 ```
-=== 5.2.リストビュー型広告の表示
+[[v_ii]]
+=== 5.2.広告の表示
 
 .一行テキスト広告の実装
 ```java:MainActivity.java
@@ -328,7 +347,8 @@ http://developer.android.com/reference/android/widget/AdapterView.html[AdapterVi
 http://developer.android.com/reference/android/widget/StackView.html[StackView] +
 http://developer.android.com/reference/android/widget/Gallery.html[Gallery] +
 
-=== 5.3.ネイティブ広告の更新
+[[v_iii]]
+=== 5.3.広告の更新
 
 該当するSIDのTAGの広告が更新されます。
 
@@ -336,6 +356,7 @@ http://developer.android.com/reference/android/widget/Gallery.html[Gallery] +
 AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
 ```
 
+[[vi]]
 === 6.デバッグ方法
 
 .ログをコンソールに出力する
