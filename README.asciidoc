@@ -1,18 +1,19 @@
+Ver 3.2.6::
+* 広告表示性能の改善
 Ver 3.2.5::
-. 画像の読み込み処理の性能改善
+* 画像の読み込み処理の性能改善
 Ver 3.2.4::
-. Playストアに直接遷移機能の安定性の向上
+* Playストアに直接遷移機能の安定性の向上
 Ver 3.2.3::
-. キャッシュ機能の性能改善
+* キャッシュ機能の性能改善
 Ver 3.2.2::
-. キャッシュ機能の安定性の向上
+* キャッシュ機能の安定性の向上
 Ver 3.2.1::
-. Playストアが既に起動されている場合はアプリ詳細画面に遷移されない不具合対応
+* Playストアが既に起動されている場合はアプリ詳細画面に遷移されない不具合対応
 
 Ver 3.2.0::
-. Playストアに直接遷移する対応をしました。
-.. 近日中に対応する広告が配信される予定です
-.. 管理画面での設定が必要です。
+* Playストアに直接遷移する対応をしました。 +
+※管理画面での設定が必要です。
 
 Ver 3.1.0 beta 7::
 . 画像の読み込み処理の性能改善
@@ -59,7 +60,7 @@ AMoAdNativeViewManager#setAMoAdLoggerListener(null);
 ```
 
 Ver 3.1.0 beta 5 hotfix1::
-. 広告をclearAdしても広告のクリックができるバグ対応
+* 広告をclearAdしても広告のクリックができるバグ対応
 
 Ver 3.1.0 beta 5::
 . クリック、IMPのログを出力する
@@ -80,13 +81,13 @@ AMoAdNativeViewManager#prepareAd(String sid, ...)
 ```
 
 Ver 3.1.0 beta 4 hotfix3::
-. リストビュー型のclearAdのバグ対応
+* リストビュー型のclearAdのバグ対応
 
 Ver 3.1.0 beta 4 hotfix2::
-. キャッシュされた時間切れの広告が表示されるバグ対応
+* キャッシュされた時間切れの広告が表示されるバグ対応
 
 Ver 3.1.0 beta 4 hotfix1::
-. ネイティブApp型の広告のImpressionが発生しないバグ対応
+* ネイティブApp型の広告のImpressionが発生しないバグ対応
 
 Ver 3.1.0 beta 4::
 . 広告開始位置と広告間隔の引数をバリデーションして問題がある場合はコンソールログにメッセージを出力する
@@ -104,10 +105,10 @@ pubilc void onFailure(String sid, String tag, View templateView);
 ```
 
 Ver 3.1.0 beta 3 hotfix2::
-. isExternalStorageRemovableのバグでNullPointExceptionが発生(一部の端末で発生)
+* isExternalStorageRemovableのバグでNullPointExceptionが発生(一部の端末で発生)
 
 Ver 3.1.0 beta 3 hotfix1::
-. 画像取得の失敗でNullPointException発生
+* 画像取得の失敗でNullPointException発生
 
 Ver 3.1.0 beta 3 変更内容::
 . 画像のキャッシュを圧縮ファイルで行なう
