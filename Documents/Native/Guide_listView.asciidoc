@@ -11,6 +11,7 @@
 *** <<v_i, 5.1.広告用のレイアウト作成>>
 *** <<v_ii, 5.2.広告の表示>>
 *** <<v_iii, 5.3.広告の更新>>
+*** <<v_iv, 5.4.広告のダブルタップの設定>>
 ** <<vi, 6.デバッグ方法>>
 
 ''''
@@ -354,6 +355,16 @@ http://developer.android.com/reference/android/widget/Gallery.html[Gallery] +
 
 ```java
 AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
+```
+
+[[v_iv]]
+=== 5.4.広告のダブルタップの設定
+```java
+AMoAdNativeViewCoder coder = new AMoAdNativeViewCoder();
+coder.setTouchType(AMoAdNativeViewCoder.TouchType.DoubleTap);
+
+BaseAdapter adAdapter = AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, mAdapter, R.layout.template, coder);
+setListAdapter(adAdapter);
 ```
 
 [[vi]]

@@ -18,8 +18,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":42,"i7":10,"i8":42,"i9":10,"i10":10,"i11":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -145,7 +145,7 @@ extends Object</pre>
 </a>
 <h3>メソッドの概要</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="メソッドの概要表、メソッドのリストおよび説明">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">修飾子とタイプ</th>
 <th class="colLast" scope="col">メソッドと説明</th>
@@ -189,23 +189,37 @@ extends Object</pre>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#loadIcon-com.amoad.AMoAdNativeInfo.ImageLoadListener-">loadIcon</a></span>(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</code>
-<div class="block">アイコンを非同期で取得する</div>
+<div class="block"><span class="deprecatedLabel">非推奨です。</span>&nbsp;</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#loadImage-com.amoad.AMoAdNativeInfo.ImageLoadListener-">loadImage</a></span>(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</code>
-<div class="block">画像を非同期で取得する</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#loadIcon-android.widget.ImageView-com.amoad.AMoAdNativeInfo.ImageLoadListener-">loadIcon</a></span>(ImageView&nbsp;imageView,
+        <a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</code>
+<div class="block">アイコンを非同期で取得する</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#loadImage-com.amoad.AMoAdNativeInfo.ImageLoadListener-">loadImage</a></span>(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</code>
+<div class="block"><span class="deprecatedLabel">非推奨です。</span>&nbsp;</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#loadImage-android.widget.ImageView-com.amoad.AMoAdNativeInfo.ImageLoadListener-">loadImage</a></span>(ImageView&nbsp;imageView,
+         <a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</code>
+<div class="block">画像を非同期で取得する</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#sendImpression-java.lang.String-">sendImpression</a></span>(String&nbsp;tag)</code>
 <div class="block">Impressionコールをする<br>
  広告が表示されたタイミングに呼ぶ必要があります。</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeInfo.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -353,7 +367,9 @@ extends Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>loadIcon</h4>
-<pre>public&nbsp;void&nbsp;loadIcon(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</pre>
+<pre>@Deprecated
+public&nbsp;void&nbsp;loadIcon(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</pre>
+<div class="block"><span class="deprecatedLabel">非推奨です。</span>&nbsp;</div>
 <div class="block">アイコンを非同期で取得する</div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
@@ -361,16 +377,50 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
+<a name="loadIcon-android.widget.ImageView-com.amoad.AMoAdNativeInfo.ImageLoadListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadIcon</h4>
+<pre>public&nbsp;void&nbsp;loadIcon(ImageView&nbsp;imageView,
+                     <a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</pre>
+<div class="block">アイコンを非同期で取得する</div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>imageView</code> - アイコン画像ビュー</dd>
+<dd><code>listener</code> - 非同期処理が終わったら呼ばれるリスナー</dd>
+</dl>
+</li>
+</ul>
 <a name="loadImage-com.amoad.AMoAdNativeInfo.ImageLoadListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadImage</h4>
+<pre>@Deprecated
+public&nbsp;void&nbsp;loadImage(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</pre>
+<div class="block"><span class="deprecatedLabel">非推奨です。</span>&nbsp;</div>
+<div class="block">画像を非同期で取得する</div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>listener</code> - 非同期処理が終わったら呼ばれるリスナー</dd>
+</dl>
+</li>
+</ul>
+<a name="loadImage-android.widget.ImageView-com.amoad.AMoAdNativeInfo.ImageLoadListener-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>loadImage</h4>
-<pre>public&nbsp;void&nbsp;loadImage(<a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</pre>
+<pre>public&nbsp;void&nbsp;loadImage(ImageView&nbsp;imageView,
+                      <a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a>&nbsp;listener)</pre>
 <div class="block">画像を非同期で取得する</div>
 <dl>
 <dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>imageView</code> - メイン画像ビュー</dd>
 <dd><code>listener</code> - 非同期処理が終わったら呼ばれるリスナー</dd>
 </dl>
 </li>
