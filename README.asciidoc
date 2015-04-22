@@ -3,7 +3,8 @@ Ver 3.2.6::
 Ver 3.2.5::
 * 画像の読み込み処理の性能改善
 Ver 3.2.4::
-* Playストアに直接遷移機能の安定性の向上
+. Playストアに直接遷移機能の安定性の向上
+. 広告のダブルタップ機能の追加
 Ver 3.2.3::
 * キャッシュ機能の性能改善
 Ver 3.2.2::
@@ -141,3 +142,22 @@ link:https://github.com/amoad/amoad-android-sdk/raw/master/Modules/AMoAd.jar[AMo
 ライブラリ
 link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/Native/javadoc/index.html[javadoc]::
 Javaドキュメント
+
+=== サンプルアプリ
+[horizontal]
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppTextSample[AMoAdNativeAppTextSample]::
+ネイティブApp型の「テキスト広告」のサンプルアプリ
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppIconTextSample[AMoAdNativeAppIconTextSample]::
+ネイティブApp型の「アイコン画像+テキスト広告」のサンプルアプリ
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppImageTextSample[AMoAdNativeAppImageTextSample]::
+ネイティブApp型の「メイン画像+テキスト広告」のサンプルアプリ
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppImageTextSample_CustomClick[AMoAdNativeAppImageTextSample_CustomClick]::
+ネイティブApp型の「メイン画像+テキスト広告」のサンプルアプリ、クリック領域の設定
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewTextSample[AMoAdNativeAppTextSample]::
+リストビュー型の「テキスト広告」のサンプルアプリ
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewIconTextSample[AMoAdNativeAppIconTextSample]::
+リストビュー型の「アイコン画像+テキスト広告」のサンプルアプリ
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample[AMoAdNativeAppImageTextSample]::
+リストビュー型の「メイン画像+テキスト広告」のサンプルアプリ
+link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample_CustomClick[AMoAdNativeListViewImageTextSample_CustomClick]::
+リストビュー型の「メイン画像+テキスト広告」のサンプルアプリ、クリック領域の設定
