@@ -1,4 +1,4 @@
-:Version: 3.2.7
+:Version: 3.3.0
 
 == AMoAdネイティブ広告 SDK{Version} Guide for Android - nativeApp
 
