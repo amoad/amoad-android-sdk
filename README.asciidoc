@@ -1,3 +1,11 @@
+Ver 3.6.0::
+* アプリから追跡型広告の配信を制限するI/Fを追加しました。
+[source, java]
+----
+// [SDK] 追跡型広告を配信しない（デフォルトは配信する）
+AMoAdNativeViewManager.getInstance(context).setLimitAdTrackingEnabled(true);
+----
+
 Ver 3.3.0::
 * 広告読込キャッシュのパフォーマンス改善を行いました。
 Ver 3.2.7::
