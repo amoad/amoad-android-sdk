@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.amoad.AMoAdView
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#000"
+        xmlns:amoad="http://schemas.amoad.com/apk/res/android"
+        amoad:click_transition="jump"
+        amoad:rotate_transition="rotate"
+        amoad:sid="管理画面から発行されるSIDを設定してください" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="次へ" />
+
+</LinearLayout>
