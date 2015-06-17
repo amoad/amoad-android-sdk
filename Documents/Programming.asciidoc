@@ -1,0 +1,819 @@
+:Version: 3.6.0
+:toc: macro
+:toc-title: 目次
+:toclevels: 4
+
+= AMoAd SDK {version} Programming Guide for Android
+
+toc::[]
+
+:numbered!:
+:sectnums!:
+== 　
+:numbered:
+:sectnums:
+
+== バナー広告
+表示広告種類は、画像・テキスト・HTMLの有無によって、以下の3タイプあります
+
+.広告の種類
+[options="header"]
+|===
+|広告種類 |サイズ
+.5+|バナー広告
+.1+|320px x 50px
+.1+|320px x 100px
+.1+|300px x 100px
+.1+|300px x 250px
+.1+|728px x 90px
+.2+|HTML広告
+.1+|320px x 50px
+.1+|320px x 100px
+.1+|アイコン+テキスト広告
+.1+|320px x 50px
+|===
+
+=== 表示(XML利用)
+レイアウトに<com.amoad.AMoAdView .../>を追加する
+
+.サンプルXML
+[source, xml]
+----
+<LinearLayout ... >
+    ...
+    <com.amoad.AMoAdView
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#000"
+        xmlns:amoad="http://schemas.amoad.com/apk/res/android"
+        amoad:click_transition="jump"
+        amoad:rotate_transition="rotate"
+        amoad:sid="管理画面から発行されるSIDを設定してください" />
+    ...
+
+</LinearLayout>
+----
+
+.sidとは
+[TIP]
+管理画面で広告枠を作成したときに発行されるIDです。
+SDKの機能を呼び出すために複数の箇所から参照しますので、
+文字列定数などに保持しておくことをお勧めします。
+
+.タグの説明
+[options="header"]
+|===
+|キー |値 |説明
+.1+|xmlns:amoad 2+|"http://schemas.amoad.com/apk/res/android"（※必須）
+.1+|amoad:sid 2+|管理画面から発行されるSIDを設定してください（※必須）
+.6+|amoad:rotate_transition 2+|広告ローテーション時のトランジションを設定する
+.1+|"none" |トランジション「なし」（デフォルト）
+.1+|"alpha" |トランジション「透過」
+.1+|"rotate" |トランジション「回転」
+.1+|"scale" |トランジション「拡大」
+.1+|"translate" |トランジション「スライド・アップ」
+.3+|amoad:rotate_transition 2+|広告クリック時のトランジションを設定する
+.1+|"none" |トランジション「なし」（デフォルト）
+.1+|"jump" |トランジション「ジャンプ」
+.1+|android:background 2+|最初の広告情報が取れるまでに表示する画像を設定する
+|===
+
+=== 表示(ソースコード利用)
+. 本SDKでは広告の生成をソースコードで行うこともできます。 +
+その場合でもシングルトン・パターンなどで生成を管理する必要はなく、 +
+各画面に同じ固有IDを設定することで広告を内部的に共有します
+
+.サンプルコード
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    AMoAdView amoadView == new AMoAdView(this);
+    amoadView.setSid("管理画面から発行されるSIDを設定してください");
+    amoadView.setRotateTransition(AMoAdView.RotateTransition.ALPHA);
+    amoadView.setClickTransition(AMoAdView.ClickTransition.JUMP);
+
+    ViewGroup content == (ViewGroup) findViewById(R.id.banner);
+    content.addView(amoadView);
+}
+----
+
+=== コールバック
+広告の取得を通知する
+
+.サンプルコード
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    AMoAdView amoadView == ((AMoAdView)findViewById(R.id.banner));
+
+    amoadView.setCallback(new AdCallback() {
+        @Override
+        public void didReceiveAd() {
+          //受信成功
+        }
+        @Override
+        public void didFailToReceiveAdWithError() {
+          //受信失敗
+        }
+        @Override
+        public void didReceiveEmptyAd() {
+          //広告が配信されてない
+        }
+    });
+}
+----
+
+=== ローテーションの開始、停止
+本SDKは、管理画面の「自動更新間隔」で指定された間隔で自動的に広告をローテーション表示します。 +
+ローテーションさせたくない場合やAdMob広告ネットワークメディエーション等の外部機能で +
+AMoAd SDKを制御する際は、管理画面の「自動更新間隔」に「0」を設定してください。
+
+
+=== テスト検証について
+. 組み込みが正しく行われたかどうかは、管理画面から発行されるsidを設定していただくことで、確認いただけます。
+. 広告枠を作成いただくと、AMoAdで広告枠の審査を行わせていただきます。広告枠の審査が完了するまでは、以下のバナーが表示されます。 +
+image:images/default_banner.png[width="400px"]
+
+. 広告枠の審査が完了すると、広告主から提供されている広告が配信されるようになります。
+
+== ネイティブApp広告
+表示広告種類は、画像の有無、テキストの長さなどによって、以下の3タイプあります
+
+.ネイティブ広告の種類
+[options="header"]
+|===
+|広告枠フォーマット |表示広告種類
+.3+|ネイティブ型
+.1+|一行テキスト
+.1+|アイコン画像＋テキスト
+.1+|メイン画像＋テキスト
+|===
+
+=== レイアウト作成
+.下記表を参考にレイアウトを作成する
+[options="header"]
+|=======================
+| パターン | オブジェクト | クラス | タグ名（android:tag）
+| アイコン画像＋テキスト | アイコン画像 | ImageView | AMoAdNativeViewIconImage
+| メイン画像＋テキスト | メイン画像 | ImageView | AMoAdNativeViewMainImage
+| 共通 | タイトルショート | TextView | AMoAdNativeViewTitleShort
+| 共通 | タイトルロング | TextView | AMoAdNativeViewTitleLong
+| 共通 | サービス名 | TextView | AMoAdNativeViewServiceName
+|=======================
+
+.一行テキスト広告のサンプル
+[source, xml]
+----
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ServiceName"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort"/>
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewServiceName"/>
+
+</RelativeLayout>
+----
+
+.アイコン画像+テキスト広告のサンプル
+[source, xml]
+----
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/IconImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewIconImage" />
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort"/>
+
+    <TextView
+        android:id="@+id/TitleLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleShort"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleLong"/>
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleLong"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:tag="AMoAdNativeViewServiceName"/>
+
+</RelativeLayout>
+----
+
+.メイン画像+テキスト広告のサンプル
+[source, xml]
+----
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/IconImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewIconImage" />
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:tag="AMoAdNativeViewServiceName"/>
+
+    <ImageView
+        android:id="@+id/MainImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IconImage"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewMainImage" />
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MainImage"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort"/>
+
+    <TextView
+        android:id="@+id/TitleLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleShort"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleLong"/>
+
+</RelativeLayout>
+----
+
+[TIP]
+クリック領域の設定 : +
+「android:tag="AMoAdNativeViewLink"」でクリック領域の設定ができます。 +
+指定しない場合はレイアウト全体がクリック領域になります。 +
+
+
+.クリック領域の設定サンプル
+[source, xml]
+----
+<RelativeLayout ... >
+    ...
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="AMoAdNativeViewLink"
+        android:text="アプリをダウンロードする" />
+    ...
+</RelativeLayout>
+----
+
+=== 表示
+
+.一行テキスト広告の実装
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID);
+
+  View adView == AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.native_text);
+
+  ViewGroup vg == (ViewGroup) findViewById(R.id.top);
+  vg.addView(adView);
+}
+----
+
+.SIDとは
+[TIP]
+管理画面で広告枠を作成したときに発行されるIDです。
+SDKの機能を呼び出すために複数の箇所から参照しますので、
+文字列定数などに保持しておくことをお勧めします。
+
+.TAGとは
+[TIP]
+同一SIDで複数の広告を表示するための識別IDです。 +
+SID + TAG1、SID + TAG2で分けて使うことで同じ広告が表示されることを避けます。
+
+.アイコン画像+テキスト広告の実装
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, true);
+
+  View adView == AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.native_icon);
+
+  ViewGroup vg == (ViewGroup) findViewById(R.id.top);
+  vg.addView(adView);
+}
+----
+
+.メイン画像+テキスト広告の実装
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, true, true);
+
+  View adView == AMoAdNativeViewManager.getInstance(this).createView(SID, TAG, R.layout.native_image);
+
+  ViewGroup vg == (ViewGroup) findViewById(R.id.top);
+  vg.addView(adView);
+}
+----
+
+=== 更新
+
+該当するSIDのTAGの広告が更新されます。
+
+[source, java]
+----
+AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
+----
+
+=== クリア
+
+該当するSIDのTAGの広告がクリアされます。（テキストと画像が消える）
+
+[source, java]
+----
+AMoAdNativeViewManager.getInstance(context).clearAd(SID, TAG);
+----
+
+該当するSIDの広告がすべてクリアされます。（テキストと画像が消える）
+[source, java]
+----
+AMoAdNativeViewManager.getInstance(context).clearAds(SID);
+----
+
+=== ダブルタップの設定
+[source, java]
+----
+AMoAdNativeViewCoder coder == new AMoAdNativeViewCoder();
+coder.setTouchType(AMoAdNativeViewCoder.TouchType.DoubleTap);
+
+View templateView == findViewById(R.id.templateView);
+AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView, null, coder);
+----
+
+=== 広告の取得失敗を検知する
+
+該当するSIDのTAGの広告の取得失敗を検知する。 +
+createView関数、またはrenderAd関数に失敗検知リスナーを渡す。
+
+[source, java]
+----
+View view == AMoAdNativeViewManager.getInstance(context).createView(sid, tag, R.layout.template, new AMoAdNativeFailureListener() {
+  @Override
+  public void onFailure(String sid, String tag, View templateView) {
+    // 広告の取得失敗を検知
+  }
+});
+----
+
+[source, java]
+----
+AMoAdNativeViewManager.getInstance(context).renderAd(sid, tag, templateView, new AMoAdNativeFailureListener() {
+  @Override
+  public void onFailure(String sid, String tag, View templateView) {
+    // 広告の取得失敗を検知
+  }
+});
+----
+
+=== レイアウトファイルの作らずに広告を表示する方法
+renderAd関数にテンプレートビューを渡すと
+テンプレートビューに広告が埋め込まれる。
+
+[NOTE]
+5.1.広告用のレイアウト作成の代わりにactivity_main.xmlの中に +
+テンプレートに当てはまるビューを作成する必要があります。 +
+詳しい内容は提供したサンプルアプリを参考してください。
+
+
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  AMoAdNativeViewManager.getInstance(this).prepareAd(SID, true, true);
+
+  View templateView == findByViewId(R.id.templeteView);
+
+  AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG, templateView);
+}
+----
+
+=== デバッグ方法
+
+.ログをコンソールに出力する
+[source, java]
+----
+AMoAdLogger.getInstance().setEnabled(true);
+----
+
+.SDKログをキャッチする
+[source, java]
+----
+AMoAdLogger.getInstance().setEnabled(true);
+AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+ @Override
+    public void onLog(int level, String tag, String msg, Throwable throwable) {
+        // ログをキャッチする
+    }
+});
+----
+
+== リストビュー広告
+表示広告種類は、画像の有無、テキストの長さなどによって、以下の3タイプあります
+
+.ネイティブ広告の種類
+[options="header"]
+|===
+|広告枠フォーマット |表示広告種類
+.3+|リストビュー型
+.1+|一行テキスト
+.1+|アイコン画像＋テキスト
+.1+| メイン画像＋テキスト
+|===
+
+=== レイアウト作成
+
+.下記表を参考にレイアウトを作成する
+[options="header"]
+|=======================
+| パターン | オブジェクト | クラス | タグ名（android:tag）
+| アイコン画像＋テキスト | アイコン画像 | ImageView | AMoAdNativeViewIconImage
+| メイン画像＋テキスト | メイン画像 | ImageView | AMoAdNativeViewMainImage
+| 共通 | タイトルショート | TextView | AMoAdNativeViewTitleShort
+| 共通 | タイトルロング | TextView | AMoAdNativeViewTitleLong
+| 共通 | サービス名 | TextView | AMoAdNativeViewServiceName
+|=======================
+
+.一行テキスト広告のサンプル
+[source, xml]
+----
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ServiceName"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort"/>
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewServiceName"/>
+
+</RelativeLayout>
+----
+
+.アイコン画像+テキスト広告のサンプル
+[source, xml]
+----
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/IconImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewIconImage" />
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort"/>
+
+    <TextView
+        android:id="@+id/TitleLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleShort"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleLong"/>
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleLong"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:tag="AMoAdNativeViewServiceName"/>
+
+</RelativeLayout>
+----
+
+.メイン画像+テキスト広告のサンプル
+[source, xml]
+----
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/IconImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewIconImage" />
+
+    <TextView
+        android:id="@+id/ServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/IconImage"
+        android:ellipsize="end"
+        android:tag="AMoAdNativeViewServiceName"/>
+
+    <ImageView
+        android:id="@+id/MainImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IconImage"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"
+        android:tag="AMoAdNativeViewMainImage" />
+
+    <TextView
+        android:id="@+id/TitleShort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MainImage"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleShort"/>
+
+    <TextView
+        android:id="@+id/TitleLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleShort"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:tag="AMoAdNativeViewTitleLong"/>
+
+</RelativeLayout>
+----
+
+[TIP]
+クリック領域の設定 : +
+「android:tag="AMoAdNativeViewLink"」でクリック領域の設定ができます。 +
+指定しない場合はレイアウト全体がクリック領域になります。 +
+
+
+.クリック領域の設定サンプル
+[source, xml]
+----
+<RelativeLayout ... >
+    ...
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="AMoAdNativeViewLink"
+        android:text="アプリをダウンロードする" />
+    ...
+</RelativeLayout>
+----
+
+=== 表示
+
+.一行テキスト広告の実装
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    AMoAdNativeViewManager.getInstance(this).prepareAd(SID, 1, 5);
+
+    ArrayAdapter<String> adapter == new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
+
+    BaseAdapter nativeAdAdapter == AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, adapter, R.layout.native_text);
+
+    listView.setAdapter(nativeAdAdapter);
+}
+----
+
+.SIDとは
+[TIP]
+管理画面で広告枠を作成したときに発行されるIDです。
+SDKの機能を呼び出すために複数の箇所から参照しますので、
+文字列定数などに保持しておくことをお勧めします。
+
+.TAGとは
+[TIP]
+同一SIDで複数の広告を表示するための識別IDです。 +
+SID + TAG1、SID + TAG2で分けて使うことで同じ広告が表示されることを避けます。
+
+.広告表示位置の開始位置(beginIndex)とは
+[TIP]
+一覧上、広告の表示開始位置
+
+.広告表示位置の間隔(interval)とは
+[TIP]
+広告と次の広告との間隔
+
+.アイコン画像+テキスト広告の実装
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    AMoAdNativeViewManager.getInstance(this).prepareAd(SID, 1, 5, true);
+
+    ArrayAdapter<String> adapter == new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
+
+    BaseAdapter nativeAdAdapter == AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, adapter, R.layout.native_icon);
+
+    listView.setAdapter(nativeAdAdapter);
+}
+----
+
+.メイン画像+テキスト広告の実装
+[source, java]
+----
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    AMoAdNativeViewManager.getInstance(this).prepareAd(SID, 1, 5, true, true);
+
+    ArrayAdapter<String> adapter == new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
+
+    BaseAdapter nativeAdAdapter == AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, adapter, R.layout.native_image);
+
+    listView.setAdapter(nativeAdAdapter);
+}
+----
+
+.利用可能なリスト形式(BaseAdapterが使える)UIの例
+[TIP]
+http://developer.android.com/reference/android/widget/ListView.html[ListView] +
+http://developer.android.com/reference/android/widget/GridView.html[GridView] +
+http://developer.android.com/reference/android/widget/AdapterView.html[AdapterViewFlipper] +
+http://developer.android.com/reference/android/widget/StackView.html[StackView] +
+http://developer.android.com/reference/android/widget/Gallery.html[Gallery] +
+
+=== 更新
+
+該当するSIDのTAGの広告が更新されます。
+
+[source, java]
+----
+AMoAdNativeViewManager.getInstance(context).updateAd(SID, TAG);
+----
+
+=== ダブルタップの設定
+[source, java]
+----
+AMoAdNativeViewCoder coder == new AMoAdNativeViewCoder();
+coder.setTouchType(AMoAdNativeViewCoder.TouchType.DoubleTap);
+
+BaseAdapter adAdapter == AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, mAdapter, R.layout.template, coder);
+setListAdapter(adAdapter);
+----
+
+=== デバッグ方法
+
+.ログをコンソールに出力する
+[source, java]
+----
+AMoAdLogger.getInstance().setEnabled(true);
+----
+
+.SDKログをキャッチする
+[source, java]
+----
+AMoAdLogger.getInstance().setEnabled(true);
+AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+ @Override
+    public void onLog(int level, String tag, String msg, Throwable throwable) {
+        // ログをキャッチする
+    }
+});
+----
