@@ -5,9 +5,9 @@
 :numbered:
 :sectnums:
 
-== link:Documents/OVERVIEW.asciidoc[概要]
-== link:Documents/SETUP.asciidoc[導入手順]
-== link:Documents/PROGRAMMING.asciidoc[実装方法]
+== link:Documents/Overview.asciidoc[概要]
+== link:Documents/Setup.asciidoc[導入手順]
+== link:Documents/Programming.asciidoc[実装方法]
 
 == ダウンロード
 [options="header"]
