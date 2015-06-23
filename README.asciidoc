@@ -1,6 +1,7 @@
 = AMoAd SDK for Android
 
-=== link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+* link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[一括ダウンロード]
+* link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
 
 :numbered:
 :sectnums:
