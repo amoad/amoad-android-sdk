@@ -29,9 +29,9 @@
 .1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppImageTextSample[AMoAdNativeAppImageTextSample] |メイン画像+テキスト広告
 .1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppImageTextSample_CustomClick[AMoAdNativeAppImageTextSample_CustomClick] |メイン画像+テキスト広告 +
 (クリック領域の設定)
-.4+|リストビュー |link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewTextSample[AMoAdNativeAppTextSample] |テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewIconTextSample[AMoAdNativeAppIconTextSample] |アイコン画像+テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample[AMoAdNativeAppImageTextSample] |メイン画像+テキスト広告
+.4+|リストビュー |link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewTextSample[AMoAdNativeListViewTextSample] |テキスト広告
+.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewIconTextSample[AMoAdNativeListViewIconTextSample] |アイコン画像+テキスト広告
+.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample[AMoAdNativeListViewImageTextSample] |メイン画像+テキスト広告
 .1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample_CustomClick[AMoAdNativeListViewImageTextSample_CustomClick] |メイン画像+テキスト広告 +
 (クリック領域の設定)
 |===
