@@ -16,7 +16,7 @@ toc::[]
 == サポート対象
 Android OS 2.3.3（API Level 10）以上がサポート対象です。
 
-== Google Player Servicesの追加(Eclipse版)
+== Google Play Servicesの追加(Eclipse版)
 .Eclipse以外はGoogleドキュメントを参考してください
 [NOTE]
 http://developer.android.com/google/play-services/setup.html[Setting Up Google Play Services]
