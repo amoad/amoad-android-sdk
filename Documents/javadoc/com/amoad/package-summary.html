@@ -96,35 +96,15 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a></td>
-<td class="colLast">
-<div class="block">広告取得失敗をsid+tag単位で通知するリスナー
- 
- <br>
- <br>
- サンプルコード1
- 
-     View view = AMoAdNativeViewManager.getInstance(this).createView(sid, tag, R.layout.template, new AMoAdNativeFailureListener() {
-         public void onFailure(String sid, String tag, View templateView) {
-             // 広告の取得失敗を検知
-         }
-     });
- 
- <br>
- サンプルコード2
- 
-     AMoAdNativeViewManager.getInstance(this).renderAd(sid, tag, templateView, new AMoAdNativeFailureListener() {
-         public void onFailure(String sid, String tag, View templateView) {
-             // 広告の取得失敗を検知
-         }
-     });
- </div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><a href="../../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース">AMoAdNativeInfo.ImageLoadListener</a></td>
 <td class="colLast">
 <div class="block">画像の取得処理が終わったら呼ばれるリスナー</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a></td>
+<td class="colLast">
+<div class="block">リスナー</div>
 </td>
 </tr>
 </tbody>
@@ -192,18 +172,24 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="../../com/amoad/AMoAdNativeListener.Result.html" title="com.amoad内の列挙型">AMoAdNativeListener.Result</a></td>
+<td class="colLast">
+<div class="block">広告受信結果</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="../../com/amoad/AMoAdNativeViewCoder.TouchType.html" title="com.amoad内の列挙型">AMoAdNativeViewCoder.TouchType</a></td>
 <td class="colLast">
 <div class="block">ビューのタッチタイプ</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../com/amoad/AMoAdView.ClickTransition.html" title="com.amoad内の列挙型">AMoAdView.ClickTransition</a></td>
 <td class="colLast">
 <div class="block">広告板のクリック時のアニメーション</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../com/amoad/AMoAdView.RotateTransition.html" title="com.amoad内の列挙型">AMoAdView.RotateTransition</a></td>
 <td class="colLast">
 <div class="block">広告板の更新時のアニメーション</div>

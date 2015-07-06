@@ -121,30 +121,6 @@
 <dd>
 <div class="block">ログをすり替えるリスナー</div>
 </dd>
-<dt><a href="../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース"><span class="typeNameLink">AMoAdNativeFailureListener</span></a> - <a href="../com/amoad/package-summary.html">com.amoad</a>のインタフェース</dt>
-<dd>
-<div class="block">広告取得失敗をsid+tag単位で通知するリスナー
- 
- <br>
- <br>
- サンプルコード1
- 
-     View view = AMoAdNativeViewManager.getInstance(this).createView(sid, tag, R.layout.template, new AMoAdNativeFailureListener() {
-         public void onFailure(String sid, String tag, View templateView) {
-             // 広告の取得失敗を検知
-         }
-     });
- 
- <br>
- サンプルコード2
- 
-     AMoAdNativeViewManager.getInstance(this).renderAd(sid, tag, templateView, new AMoAdNativeFailureListener() {
-         public void onFailure(String sid, String tag, View templateView) {
-             // 広告の取得失敗を検知
-         }
-     });
- </div>
-</dd>
 <dt><a href="../com/amoad/AMoAdNativeInfo.html" title="com.amoad内のクラス"><span class="typeNameLink">AMoAdNativeInfo</span></a> - <a href="../com/amoad/package-summary.html">com.amoad</a>のクラス</dt>
 <dd>
 <div class="block">Native広告情報</div>
@@ -152,6 +128,14 @@
 <dt><a href="../com/amoad/AMoAdNativeInfo.ImageLoadListener.html" title="com.amoad内のインタフェース"><span class="typeNameLink">AMoAdNativeInfo.ImageLoadListener</span></a> - <a href="../com/amoad/package-summary.html">com.amoad</a>のインタフェース</dt>
 <dd>
 <div class="block">画像の取得処理が終わったら呼ばれるリスナー</div>
+</dd>
+<dt><a href="../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース"><span class="typeNameLink">AMoAdNativeListener</span></a> - <a href="../com/amoad/package-summary.html">com.amoad</a>のインタフェース</dt>
+<dd>
+<div class="block">リスナー</div>
+</dd>
+<dt><a href="../com/amoad/AMoAdNativeListener.Result.html" title="com.amoad内の列挙型"><span class="typeNameLink">AMoAdNativeListener.Result</span></a> - <a href="../com/amoad/package-summary.html">com.amoad</a>の列挙型</dt>
+<dd>
+<div class="block">広告受信結果</div>
 </dd>
 <dt><a href="../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス"><span class="typeNameLink">AMoAdNativeViewCoder</span></a> - <a href="../com/amoad/package-summary.html">com.amoad</a>のクラス</dt>
 <dd>
