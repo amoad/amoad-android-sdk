@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -217,6 +217,27 @@ extends Object</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>BaseAdapter</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-com.amoad.AMoAdNativeListener-">createAdapter</a></span>(String&nbsp;sid,
+             String&nbsp;tag,
+             Adapter&nbsp;originalAdapter,
+             int&nbsp;viewResourceId,
+             <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener)</code>
+<div class="block">広告を含んだデータソース生成.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>BaseAdapter</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-com.amoad.AMoAdNativeListener-com.amoad.AMoAdNativeViewCoder-">createAdapter</a></span>(String&nbsp;sid,
+             String&nbsp;tag,
+             Adapter&nbsp;originalAdapter,
+             int&nbsp;viewResourceId,
+             <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener,
+             <a href="../../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス">AMoAdNativeViewCoder</a>&nbsp;coder)</code>
+<div class="block">広告を含んだデータソース生成.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>BaseAdapter</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-com.amoad.AMoAdNativeViewCoder-">createAdapter</a></span>(String&nbsp;sid,
              String&nbsp;tag,
              Adapter&nbsp;originalAdapter,
@@ -225,7 +246,7 @@ extends Object</pre>
 <div class="block">広告を含んだデータソース生成.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-">createView</a></span>(String&nbsp;sid,
           String&nbsp;tag,
@@ -233,51 +254,51 @@ extends Object</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>View</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeFailureListener-">createView</a></span>(String&nbsp;sid,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeListener-">createView</a></span>(String&nbsp;sid,
           String&nbsp;tag,
           int&nbsp;viewResourceId,
-          <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)</code>
+          <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener)</code>
 <div class="block">ネイティブ広告ビューを生成して返却する.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>View</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeFailureListener-com.amoad.AMoAdNativeViewCoder-">createView</a></span>(String&nbsp;sid,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeListener-com.amoad.AMoAdNativeViewCoder-">createView</a></span>(String&nbsp;sid,
           String&nbsp;tag,
           int&nbsp;viewResourceId,
-          <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener,
+          <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener,
           <a href="../../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス">AMoAdNativeViewCoder</a>&nbsp;coder)</code>
 <div class="block">ネイティブ広告ビューを生成して返却する.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../com/amoad/AMoAdNativeViewManager.html" title="com.amoad内のクラス">AMoAdNativeViewManager</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#getInstance-android.content.Context-">getInstance</a></span>(Context&nbsp;context)</code>
 <div class="block">広告取得・表示用Manager管理.シングルトンインスタンスを取得する.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#isLimitAdTrackingEnabled--">isLimitAdTrackingEnabled</a></span>()</code>
 <div class="block">インタレストベース広告</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-">prepareAd</a></span>(String&nbsp;sid)</code>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-boolean-">prepareAd</a></span>(String&nbsp;sid,
          boolean&nbsp;iconPreloading)</code>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-boolean-boolean-">prepareAd</a></span>(String&nbsp;sid,
          boolean&nbsp;iconPreloading,
@@ -285,7 +306,7 @@ extends Object</pre>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-int-int-">prepareAd</a></span>(String&nbsp;sid,
          int&nbsp;defaultBeginIndex,
@@ -293,7 +314,7 @@ extends Object</pre>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-int-int-boolean-">prepareAd</a></span>(String&nbsp;sid,
          int&nbsp;defaultBeginIndex,
@@ -302,7 +323,7 @@ extends Object</pre>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#prepareAd-java.lang.String-int-int-boolean-boolean-">prepareAd</a></span>(String&nbsp;sid,
          int&nbsp;defaultBeginIndex,
@@ -312,7 +333,7 @@ extends Object</pre>
 <div class="block">広告を準備する.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-">renderAd</a></span>(String&nbsp;sid,
         String&nbsp;tag,
@@ -320,32 +341,32 @@ extends Object</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeFailureListener-">renderAd</a></span>(String&nbsp;sid,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeListener-">renderAd</a></span>(String&nbsp;sid,
         String&nbsp;tag,
         View&nbsp;templateView,
-        <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)</code>
+        <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener)</code>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeFailureListener-com.amoad.AMoAdNativeViewCoder-">renderAd</a></span>(String&nbsp;sid,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeListener-com.amoad.AMoAdNativeViewCoder-">renderAd</a></span>(String&nbsp;sid,
         String&nbsp;tag,
         View&nbsp;templateView,
-        <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener,
+        <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener,
         <a href="../../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス">AMoAdNativeViewCoder</a>&nbsp;coder)</code>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#setLimitAdTrackingEnabled-boolean-">setLimitAdTrackingEnabled</a></span>(boolean&nbsp;limitAdTrackingEnabled)</code>
 <div class="block">インタレストベース広告</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../com/amoad/AMoAdNativeViewManager.html#updateAd-java.lang.String-java.lang.String-">updateAd</a></span>(String&nbsp;sid,
         String&nbsp;tag)</code>
@@ -661,6 +682,37 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
+<a name="createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-com.amoad.AMoAdNativeListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createAdapter</h4>
+<pre>public&nbsp;BaseAdapter&nbsp;createAdapter(String&nbsp;sid,
+                                 String&nbsp;tag,
+                                 Adapter&nbsp;originalAdapter,
+                                 int&nbsp;viewResourceId,
+                                 <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener)
+                          throws IllegalStateException</pre>
+<div class="block">広告を含んだデータソース生成. ユーザーが使用していたアダプターをデコレートし,ネイティブ広告表示用のAdapterを生成する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[リストビュー]</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
+<dd><code>originalAdapter</code> - ユーザー様ご自身が使用しているアダプターを指定する</dd>
+<dd><code>viewResourceId</code> - 指定されたsid及びtagがprepareAdで未登録の場合に発生する</dd>
+<dd><code>nativeListener</code> - リスナー</dd>
+<dt><span class="returnLabel">戻り値:</span></dt>
+<dd>BaseAdapter 広告を含んだデータソースを返却する</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalStateException</code></dd>
+</dl>
+</li>
+</ul>
 <a name="createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-com.amoad.AMoAdNativeViewCoder-">
 <!--   -->
 </a>
@@ -684,6 +736,39 @@ extends Object</pre>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>originalAdapter</code> - ユーザー様ご自身が使用しているアダプターを指定する</dd>
 <dd><code>viewResourceId</code> - 指定されたsid及びtagがprepareAdで未登録の場合に発生する</dd>
+<dd><code>coder</code> - ビューのoption</dd>
+<dt><span class="returnLabel">戻り値:</span></dt>
+<dd>BaseAdapter 広告を含んだデータソースを返却する</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>IllegalStateException</code></dd>
+</dl>
+</li>
+</ul>
+<a name="createAdapter-java.lang.String-java.lang.String-android.widget.Adapter-int-com.amoad.AMoAdNativeListener-com.amoad.AMoAdNativeViewCoder-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createAdapter</h4>
+<pre>public&nbsp;BaseAdapter&nbsp;createAdapter(String&nbsp;sid,
+                                 String&nbsp;tag,
+                                 Adapter&nbsp;originalAdapter,
+                                 int&nbsp;viewResourceId,
+                                 <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener,
+                                 <a href="../../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス">AMoAdNativeViewCoder</a>&nbsp;coder)
+                          throws IllegalStateException</pre>
+<div class="block">広告を含んだデータソース生成. ユーザーが使用していたアダプターをデコレートし,ネイティブ広告表示用のAdapterを生成する.
+ <p>該当広告タイプ</p>
+ <ul>
+ <li>[リストビュー]</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>sid</code> - 管理画面から取得したID</dd>
+<dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
+<dd><code>originalAdapter</code> - ユーザー様ご自身が使用しているアダプターを指定する</dd>
+<dd><code>viewResourceId</code> - 指定されたsid及びtagがprepareAdで未登録の場合に発生する</dd>
+<dd><code>nativeListener</code> - リスナー</dd>
 <dd><code>coder</code> - ビューのoption</dd>
 <dt><span class="returnLabel">戻り値:</span></dt>
 <dd>BaseAdapter 広告を含んだデータソースを返却する</dd>
@@ -719,7 +804,7 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeFailureListener-">
+<a name="createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeListener-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -728,7 +813,7 @@ extends Object</pre>
 <pre>public&nbsp;View&nbsp;createView(String&nbsp;sid,
                        String&nbsp;tag,
                        int&nbsp;viewResourceId,
-                       <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)
+                       <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener)
                 throws IllegalStateException</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.
  <p>該当広告タイプ</p>
@@ -740,7 +825,7 @@ extends Object</pre>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>viewResourceId</code> - 指定されたsid及びtagがprepareAdで未登録の場合に発生する</dd>
-<dd><code>failureListener</code> - 広告取得の成功・失敗を通知するリスナー</dd>
+<dd><code>nativeListener</code> - リスナー</dd>
 <dt><span class="returnLabel">戻り値:</span></dt>
 <dd>ネイティブ広告ビュー</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
@@ -748,7 +833,7 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeFailureListener-com.amoad.AMoAdNativeViewCoder-">
+<a name="createView-java.lang.String-java.lang.String-int-com.amoad.AMoAdNativeListener-com.amoad.AMoAdNativeViewCoder-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -757,7 +842,7 @@ extends Object</pre>
 <pre>public&nbsp;View&nbsp;createView(String&nbsp;sid,
                        String&nbsp;tag,
                        int&nbsp;viewResourceId,
-                       <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener,
+                       <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener,
                        <a href="../../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス">AMoAdNativeViewCoder</a>&nbsp;coder)
                 throws IllegalStateException</pre>
 <div class="block">ネイティブ広告ビューを生成して返却する.
@@ -770,7 +855,7 @@ extends Object</pre>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>viewResourceId</code> - 指定されたsid及びtagがprepareAdで未登録の場合に発生する</dd>
-<dd><code>failureListener</code> - 広告取得の成功・失敗を通知するリスナー</dd>
+<dd><code>nativeListener</code> - リスナー</dd>
 <dd><code>coder</code> - ビューのoption</dd>
 <dt><span class="returnLabel">戻り値:</span></dt>
 <dd>ネイティブ広告ビュー</dd>
@@ -804,7 +889,7 @@ extends Object</pre>
 </dl>
 </li>
 </ul>
-<a name="renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeFailureListener-">
+<a name="renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeListener-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -813,7 +898,7 @@ extends Object</pre>
 <pre>public&nbsp;void&nbsp;renderAd(String&nbsp;sid,
                      String&nbsp;tag,
                      View&nbsp;templateView,
-                     <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener)
+                     <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener)
               throws IllegalStateException</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.
  <p>該当広告タイプ</p>
@@ -825,13 +910,13 @@ extends Object</pre>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>templateView</code> - テンプレートビュー</dd>
-<dd><code>failureListener</code> - 広告取得の成功・失敗を通知するリスナー</dd>
+<dd><code>nativeListener</code> - リスナー</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
 <dd><code>IllegalStateException</code></dd>
 </dl>
 </li>
 </ul>
-<a name="renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeFailureListener-com.amoad.AMoAdNativeViewCoder-">
+<a name="renderAd-java.lang.String-java.lang.String-android.view.View-com.amoad.AMoAdNativeListener-com.amoad.AMoAdNativeViewCoder-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -840,7 +925,7 @@ extends Object</pre>
 <pre>public&nbsp;void&nbsp;renderAd(String&nbsp;sid,
                      String&nbsp;tag,
                      View&nbsp;templateView,
-                     <a href="../../com/amoad/AMoAdNativeFailureListener.html" title="com.amoad内のインタフェース">AMoAdNativeFailureListener</a>&nbsp;failureListener,
+                     <a href="../../com/amoad/AMoAdNativeListener.html" title="com.amoad内のインタフェース">AMoAdNativeListener</a>&nbsp;nativeListener,
                      <a href="../../com/amoad/AMoAdNativeViewCoder.html" title="com.amoad内のクラス">AMoAdNativeViewCoder</a>&nbsp;coder)
               throws IllegalStateException</pre>
 <div class="block">テンプレートビューにネイティブ広告を埋め込む.
@@ -853,7 +938,7 @@ extends Object</pre>
 <dd><code>sid</code> - 管理画面から取得したID</dd>
 <dd><code>tag</code> - 同じsidを複数のViwで使用する場合,一意に管理する為に使用する</dd>
 <dd><code>templateView</code> - テンプレートビュー</dd>
-<dd><code>failureListener</code> - 広告取得の成功・失敗を通知するリスナー</dd>
+<dd><code>nativeListener</code> - リスナー</dd>
 <dd><code>coder</code> - ビューのoption</dd>
 <dt><span class="throwsLabel">例外:</span></dt>
 <dd><code>IllegalStateException</code></dd>
