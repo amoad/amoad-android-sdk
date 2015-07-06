@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.amoad.AMoAdLogger;
 import com.amoad.AMoAdLoggerListener;
-import com.amoad.AMoAdNativeFailureListener;
+import com.amoad.AMoAdNativeListener;
 import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends Activity {
@@ -35,23 +35,51 @@ public class MainActivity extends Activity {
 
         // createViewの使い方
         ViewGroup containe = (ViewGroup) findViewById(R.id.container);
-        View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG1, R.layout.template, new AMoAdNativeFailureListener() {
-            @Override
-            public void onFailure(String sid, String tag, View templateView) {
-                // 広告の取得失敗
-            }
-        });
+        View adView = AMoAdNativeViewManager.getInstance(this).createView(SID, TAG1, R.layout.template, mListener);
         containe.addView(adView);
 
         // renderAdの使い方
         View templateView = findViewById(R.id.templateView);
-        AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView, new AMoAdNativeFailureListener() {
-            @Override
-            public void onFailure(String sid, String tag, View templateView) {
-                // 広告の取得失敗
-            }
-        });
+        AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView, mListener);
     }
+
+	private AMoAdNativeListener mListener = new AMoAdNativeListener() {
+
+		@Override
+		public void onReceived(String sid, String tag, View templateView, AMoAdNativeListener.Result result) {
+			// 広告情報の取得処理が終わったら呼ばれる
+			if (result == AMoAdNativeListener.Result.Success) {
+				// ...
+			} else if (result == AMoAdNativeListener.Result.Failure) {
+				// ...
+			}
+		}
+
+		@Override
+		public void onIconReceived(String sid, String tag, View templateView, AMoAdNativeListener.Result result) {
+			// アイコン画像の取得処理が終わったら呼ばれる
+			if (result == AMoAdNativeListener.Result.Success) {
+				// ...
+			} else if (result == AMoAdNativeListener.Result.Failure) {
+				// ...
+			}
+		}
+
+		@Override
+		public void onImageReceived(String sid, String tag, View templateView, AMoAdNativeListener.Result result) {
+			// メイン画像の取得処理が終わったら呼ばれる
+			if (result == AMoAdNativeListener.Result.Success) {
+				// ...
+			} else if (result == AMoAdNativeListener.Result.Failure) {
+				// ...
+			}
+		}
+
+		@Override
+		public void onClicked(String sid, String tag, View templateView) {
+			// 広告がクリックされたら呼ばれる
+		}
+	};
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

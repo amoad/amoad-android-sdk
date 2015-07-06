@@ -1,4 +1,4 @@
-:Version: 3.7.0
+:Version: 3.7.1
 = AMoAd SDK {version} Guide for Android
 
 * link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[一括ダウンロード]

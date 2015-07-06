@@ -4,11 +4,13 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
 import com.amoad.AMoAdLogger;
 import com.amoad.AMoAdLoggerListener;
+import com.amoad.AMoAdNativeListener;
 import com.amoad.AMoAdNativeViewManager;
 
 public class MainActivity extends ListActivity {
@@ -39,9 +41,47 @@ public class MainActivity extends ListActivity {
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
         add();
 
-        BaseAdapter adAdapter = AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, mAdapter, R.layout.template);
+        BaseAdapter adAdapter = AMoAdNativeViewManager.getInstance(this).createAdapter(SID, TAG, mAdapter, R.layout.template, mListener);
         setListAdapter(adAdapter);
     }
+
+	private AMoAdNativeListener mListener = new AMoAdNativeListener() {
+
+		@Override
+		public void onReceived(String sid, String tag, View templateView, AMoAdNativeListener.Result result) {
+			// 広告情報の取得処理が終わったら呼ばれる
+			if (result == AMoAdNativeListener.Result.Success) {
+				// ...
+			} else if (result == AMoAdNativeListener.Result.Failure) {
+				// ...
+			}
+		}
+
+		@Override
+		public void onIconReceived(String sid, String tag, View templateView, AMoAdNativeListener.Result result) {
+			// アイコン画像の取得処理が終わったら呼ばれる
+			if (result == AMoAdNativeListener.Result.Success) {
+				// ...
+			} else if (result == AMoAdNativeListener.Result.Failure) {
+				// ...
+			}
+		}
+
+		@Override
+		public void onImageReceived(String sid, String tag, View templateView, AMoAdNativeListener.Result result) {
+			// メイン画像の取得処理が終わったら呼ばれる
+			if (result == AMoAdNativeListener.Result.Success) {
+				// ...
+			} else if (result == AMoAdNativeListener.Result.Failure) {
+				// ...
+			}
+		}
+
+		@Override
+		public void onClicked(String sid, String tag, View templateView) {
+			// 広告がクリックされたら呼ばれる
+		}
+	};
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
