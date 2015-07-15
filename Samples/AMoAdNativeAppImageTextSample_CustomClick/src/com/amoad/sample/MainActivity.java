@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.amoad.AMoAdLogger;
 import com.amoad.AMoAdLoggerListener;
+import com.amoad.AMoAdNativeFailureListener;
 import com.amoad.AMoAdNativeListener;
 import com.amoad.AMoAdNativeViewManager;
 
@@ -40,7 +41,12 @@ public class MainActivity extends Activity {
 
         // renderAdの使い方
         View templateView = findViewById(R.id.templateView);
-        AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView, mListener);
+        AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView,  new AMoAdNativeFailureListener() {
+			@Override
+			public void onFailure(String sid, String tag, View templateView) {
+				// 広告の取得処理が失敗したら呼ばれる
+			}
+		});
     }
 
 	private AMoAdNativeListener mListener = new AMoAdNativeListener() {
