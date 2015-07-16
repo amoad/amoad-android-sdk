@@ -1,4 +1,4 @@
-:Version: 3.7.1
+:Version: 3.7.2
 :toc: macro
 :toc-title: 目次
 :toclevels: 4
@@ -436,7 +436,22 @@ View templateView == findViewById(R.id.templateView);
 AMoAdNativeViewManager.getInstance(this).renderAd(SID, TAG2, templateView, null, coder);
 ----
 
-=== 広告リスナーを設定する
+=== 広告の取得失敗リスナーを設定する[[failure_listener]]
+
+該当するSIDとTAGの広告取得失敗を検知する。 +
+createView関数、またはrenderAd関数に失敗リスナーを渡す。
+
+[source, java]
+----
+View view == AMoAdNativeViewManager.getInstance(context).createView(sid, tag, R.layout.template, new AMoAdNativeFailureListener() {
+  @Override
+  public void onFailure(String sid, String tag, View templateView) {
+    // 広告の取得失敗を検知
+  }
+});
+----
+
+=== 広告リスナーを設定する[[native_app_listener]]
 ==== 実装例
 該当するSIDのTAGの広告の取得結果などを通知する。 +
 createView関数、またはrenderAd関数にリスナーを渡す。
@@ -864,7 +879,17 @@ BaseAdapter adAdapter == AMoAdNativeViewManager.getInstance(this).createAdapter(
 setListAdapter(adAdapter);
 ----
 
-=== 広告リスナーを設定する
+[source, java]
+----
+AMoAdNativeViewManager.getInstance(context).renderAd(sid, tag, templateView, new AMoAdNativeFailureListener() {
+  @Override
+  public void onFailure(String sid, String tag, View templateView) {
+    // 広告の取得失敗を検知
+  }
+});
+----
+
+=== 広告リスナーを設定する[[list_view_listener]]
 ==== 実装例
 該当するSIDのTAGの広告の取得結果などを通知する。 +
 createAdapter関数にリスナーを渡す。
