@@ -20,7 +20,7 @@ NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:ht
 [options="header"]
 |===
 |リンク |説明
-.1+|link:Module/AMoAd.jar[AMoAd.jar] |SDKをダウンロードする +
+.1+|link:Modules/AMoAd.jar[AMoAd.jar] |SDKをダウンロードする +
 (バナーとネイティブの統合SDK)
 .1+|link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/banner_sdk_javadoc/index.html[banner sdk javadoc] |バナーSDKのJAVAドキュメントを見る
 .1+|link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_javadoc/index.html[native sdk javadoc] |ネイティブSDKのJAVAドキュメントを見る
