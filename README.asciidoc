@@ -1,8 +1,9 @@
-:Version: 3.7.2
+:Version: 3.7.3
 = AMoAd SDK {version} Guide for Android
 
 * link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[一括ダウンロード]
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+** [NEW] AMoAdView#setResponsiveStyle()関数を呼ばないと広告が表示されないことのバグ対応
 ** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming.asciidoc#failure_listener[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
 ** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming.asciidoc#native_app_listener[ネイティブ（App）] / link:Documents/Programming.asciidoc#list_view_listener[リストビュー]）。
 ** [NEW] バナー広告がUnityに対応しました（詳しくは<<UnityPlugin, こちら>>）。
