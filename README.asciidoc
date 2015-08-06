@@ -6,9 +6,9 @@
 ** link:https://github.com/amoad/amoad-android-sdk/releases#[最新版ダウンロードページ]
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
 ** [NEW] AMoAdView#setResponsiveStyle()関数を呼ばないと広告が表示されないことのバグ対応
-** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming.asciidoc#failure_listener[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
-** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming.asciidoc#native_app_listener[ネイティブ（App）] / link:Documents/Programming.asciidoc#list_view_listener[リストビュー]）。
-** [NEW] バナー広告がUnityに対応しました（詳しくは<<UnityPlugin, こちら>>）。
+** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming.asciidoc#広告の取得失敗リスナーを設定する[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
+** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming.asciidoc#広告リスナーを設定する[ネイティブ（App）] / link:Documents/Programming.asciidoc#広告リスナーを設定する。[リストビュー]）。
+** [NEW] バナー広告がUnityに対応しました（詳しくは<<Unityプラグイン, こちら>>）。
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-android-sdk/issues[こちら] 。
 
@@ -48,7 +48,7 @@ NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:ht
 |===
 
 == プラグインなど
-=== Unityプラグイン [[UnityPlugin]]
+=== Unityプラグイン
 * link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Guide.asciidoc[導入ガイド]
 * https://github.com/amoad/amoad-ios-sdk/raw/master/UnityPlugin/AMoAdUnityPlugin.unitypackage[パッケージのダウンロード]
 * link:https://github.com/amoad/amoad-ios-sdk/blob/master/Samples/UnityPlugin[サンプルコード]
