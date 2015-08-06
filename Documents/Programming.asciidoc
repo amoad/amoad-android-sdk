@@ -886,7 +886,7 @@ AMoAdNativeViewManager.getInstance(context).renderAd(sid, tag, templateView, new
 });
 ----
 
-=== 広告リスナーを設定する。
+=== 広告リスナーを設定する
 ==== 実装例
 該当するSIDのTAGの広告の取得結果などを通知する。 +
 createAdapter関数にリスナーを渡す。
