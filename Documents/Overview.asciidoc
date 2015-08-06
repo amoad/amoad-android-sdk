@@ -6,9 +6,6 @@
 
 toc::[]
 
-:numbered!:
-:sectnums!:
-=== 　
 :numbered:
 :sectnums:
 
