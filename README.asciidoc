@@ -4,55 +4,96 @@
 * ダウンロード
 ** link:https://github.com/amoad/amoad-android-sdk/releases/latest[安定版ダウンロードページ]
 ** link:https://github.com/amoad/amoad-android-sdk/releases#[最新版ダウンロードページ]
+
+:numbered:
+:sectnums:
+== 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
 ** [NEW] AMoAdView#setResponsiveStyle()関数を呼ばないと広告が表示されないことのバグ対応
-** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming.asciidoc#広告の取得失敗リスナーを設定する[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
-** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming.asciidoc#広告リスナーを設定する[ネイティブ（App）] / link:Documents/Programming.asciidoc#広告リスナーを設定する-1[リストビュー]）。
+** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming-NativeApp.asciidoc#広告の取得失敗リスナーを設定する[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
+** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming-NativeApp.asciidoc#広告リスナーを設定する[ネイティブ（App）] / link:Documents/Programming-NativeListView.asciidoc#広告リスナーを設定する[リストビュー]）。
 ** [NEW] バナー広告がUnityに対応しました（詳しくは<<Unityプラグイン, こちら>>）。
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-android-sdk/issues[こちら] 。
 
-:numbered:
-:sectnums:
+== SDKインストール
+link:Documents/Setup.asciidoc[SDKインストールガイド]::
+SDK共通のインストール方法
 
-== link:Documents/Overview.asciidoc[概要]
-== link:Documents/Setup.asciidoc[導入手順]
-== link:Documents/Programming.asciidoc[実装方法]
+== ディスプレイ広告
+link:Documents/Overview-Display.asciidoc[概要]::
+画像やテキストを決まっているレイアウトで表示する
 
-== ダウンロード
-[options="header"]
-|===
-|リンク |説明
-.1+|link:Modules/AMoAd.jar?raw=true[AMoAd.jar] |SDKをダウンロードする +
-(バナーとネイティブの統合SDK)
-.1+|link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/banner_sdk_javadoc/index.html[banner sdk javadoc] |バナーSDKのJAVAドキュメントを見る
-.1+|link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_javadoc/index.html[native sdk javadoc] |ネイティブSDKのJAVAドキュメントを見る
-|===
+link:Documents/Programming-Display.asciidoc[実装ガイド]::
+ディスプレイ広告の実装方法
 
-== *サンプルアプリ*
+link:Samples/AMoAdBannerSample[サンプルコード]::
+管理画面から取得したsidを入力して動かしてください
 
-[options="header"]
-|===
-|広告種類 |アプリ名 |説明
-.1+|バナー |link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdBannerSample[AMoAdBannerSample] | バナー広告
-.4+|ネイティブApp |link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppTextSample[AMoAdNativeAppTextSample] |テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppIconTextSample[AMoAdNativeAppIconTextSample] |アイコン画像+テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppImageTextSample[AMoAdNativeAppImageTextSample] |メイン画像+テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeAppImageTextSample_CustomClick[AMoAdNativeAppImageTextSample_CustomClick] |メイン画像+テキスト広告 +
-(クリック領域の設定)
-.4+|リストビュー |link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewTextSample[AMoAdNativeListViewTextSample] |テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewIconTextSample[AMoAdNativeListViewIconTextSample] |アイコン画像+テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample[AMoAdNativeListViewImageTextSample] |メイン画像+テキスト広告
-.1+|link:https://github.com/amoad/amoad-android-sdk/tree/master/Samples/AMoAdNativeListViewImageTextSample_CustomClick[AMoAdNativeListViewImageTextSample_CustomClick] |メイン画像+テキスト広告 +
-(クリック領域の設定)
-|===
+link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/banner_sdk_javadoc/index.html[APIリファレンス]::
+JavaDocドキュメント
+
+== ネイティブ広告
+=== ネイティブApp
+link:Documents/Overview-NativeApp.asciidoc[概要]::
+ネイティブApp広告は、広告クリエイティブを任意のレイアウトで表示することができる商品です
+link:Documents/Programming-NativeApp.asciidoc[実装ガイド]::
+AMoAd SDKでは、ネイティブApp広告を簡単に表示するAPIを提供しています
+サンプルコード::
+管理画面から取得したsidを入力して動かしてください
+* link:Samples/AMoAdNativeAppTextSample/[テキスト広告]
+* link:Samples/AMoAdNativeAppIconTextSample/[アイコンテキスト広告]
+* link:Samples/AMoAdNativeAppImageTextSample/[メイン画像テキスト広告]
+link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_javadoc/index.html[APIリファレンス]::
+JavaDocドキュメント
+
+=== リストビュー
+link:Documents/Overview-NativeListView.asciidoc[概要]::
+ネイティブApp広告は、広告クリエイティブをリストビュー（ListView）に、任意のレイアウトで表示することができる商品です
+link:Documents/Programming-NativeListView.asciidoc[実装ガイド]::
+AMoAd SDKでは、リストビュー広告を簡単に表示するAPIを提供しています
+サンプルコード::
+管理画面から取得したsidを入力して動かしてください
+* link:Samples/AMoAdNativeListViewTextSample/[テキスト広告]
+* link:Samples/AMoAdNativeListViewIconTextSample/[アイコンテキスト広告]
+* link:Samples/AMoAdNativeListViewImageTextSample/[メイン画像テキスト広告]
+link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_javadoc/index.html[APIリファレンス]::
+JavaDocドキュメント
+
+== インタースティシャル（全画面）広告
+link:Documents/Overview-Interstitial.asciidoc[概要]::
+インタースティシャル（全画面）広告とは、AMoAdネットワークのレクタングル広告（300x250）をカスタマイズ可能なパネルに乗せて全画面表示させる機能です
+
+NOTE: Unityプラグイン、Cocos2d-xモジュールに対応しています
+
+実装ガイド::
+AMoAd SDKでは、インタースティシャル広告を簡単に表示するAPIを提供しています
 
 == プラグインなど
-=== Unityプラグイン
-* link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Guide.asciidoc[導入ガイド]
-* https://github.com/amoad/amoad-ios-sdk/raw/master/UnityPlugin/AMoAdUnityPlugin.unitypackage[パッケージのダウンロード]
-* link:https://github.com/amoad/amoad-ios-sdk/blob/master/Samples/UnityPlugin[サンプルコード]
+=== Unityプラグイン [[UnityPlugin]]
+
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Guide.asciidoc[導入ガイド]::
+プラグインの適用手順とビルド方法について説明します
+
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Display.asciidoc[インライン広告 実装ガイド]::
+インライン広告の実装方法とサンプルコードの使い方について説明します
+
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Interstitial.asciidoc[インタースティシャル（全画面）広告 実装ガイド]::
+インタースティシャル（全画面）広告の実装方法とサンプルコードの使い方について説明します
+
+=== Cocos2d-xモジュール
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Guide.asciidoc[導入ガイド]::
+モジュールの適用手順とビルド方法について説明します
+
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Display.asciidoc[インライン広告 実装ガイド]::
+インライン広告の実装方法について説明します
+
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Interstitial.asciidoc[インタースティシャル（全画面）広告 実装ガイド]::
+インタースティシャル（全画面）広告の実装方法について説明します
 
 === AdMobメディエーション アダプタ
-* link:Documents/AdMobSetup.asciidoc[導入ガイド]
-* https://github.com/amoad/amoad-android-sdk/raw/master/AdMobMediation/AMoAdGmAdapter.jar[アダプタのダウンロード]
+link:Documents/AdMobSetup.asciidoc[導入ガイド]::
+アダプタの導入方法とAdMobメディエーションの設定についてのガイドです
+
+https://github.com/amoad/amoad-android-sdk/raw/master/AdMobMediation/AMoAdGmAdapter.jar[アダプタのダウンロード]::
+アダプタの導入方法とAdMobメディエーションの設定についてのガイドです
