@@ -1,4 +1,4 @@
-:Version: 3.7.3
+:Version: 3.9.0
 = AMoAd SDK {version} Guide for Android
 
 * ダウンロード
@@ -9,6 +9,7 @@
 :sectnums:
 == 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+** [NEW] PreRoll広告
 ** [NEW] AMoAdView#setResponsiveStyle()関数を呼ばないと広告が表示されないことのバグ対応
 ** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming-NativeApp.asciidoc#広告の取得失敗リスナーを設定する[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
 ** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming-NativeApp.asciidoc#広告リスナーを設定する[ネイティブ（App）] / link:Documents/Programming-NativeListView.asciidoc#広告リスナーを設定する[リストビュー]）。
