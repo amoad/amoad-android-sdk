@@ -14,7 +14,7 @@ AMoAdネットワークのレクタングル広告（300x250）をカスタマ�
 
 .インタースティシャル（全画面）広告 実装例
 [horizontal]
-image:Images/Interstitial_00.jpg[
+image:images/Interstitial_00.jpg[
 "インタースティシャル（全画面）広告 実装例1", width=250px
 ]&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -49,7 +49,7 @@ SDKの導入については、こちら（link:https://github.com/amoad/amoad-io
 
 == パネル仕様詳細
 
-image:Images/Interstitial_00.png[
+image:images/Interstitial_00.png[
 "インタースティシャル（全画面）広告 実装例1", width=540px
 ]
 
