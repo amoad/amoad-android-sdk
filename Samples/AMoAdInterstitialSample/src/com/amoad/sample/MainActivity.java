@@ -12,26 +12,37 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		// インタースティシャル広告の準備
 		com.amoad.InterstitialAd.prepare(this, SID);
-		// com.amoad.InterstitialAd.setCloseButton(SID, R.drawable.amoad_close_btn, R.drawable.amoad_close_btn_h);
-		// com.amoad.InterstitialAd.setLinkButton(SID, R.drawable.amoad_link_btn, R.drawable.amoad_link_btn_h);
-		// com.amoad.InterstitialAd.setPanel(SID, R.drawable.amoad_panel);
+		// 閉じるボタン画像（40dpx40dp）
+		com.amoad.InterstitialAd.setCloseButton(SID, R.drawable.amoad_close_btn, R.drawable.amoad_close_btn_h);
+		// リンクボタン画像（280dpx50dp）
+		com.amoad.InterstitialAd.setLinkButton(SID, R.drawable.amoad_link_btn, R.drawable.amoad_link_btn_h);
+		// パネル画像（310dpx380dp）
+		com.amoad.InterstitialAd.setPanel(SID, R.drawable.amoad_panel);
 
 		findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// インタースティシャル広告を表示する
 				com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
 					@Override
 					public void onClose(com.amoad.InterstitialAd.Result result) {
 						switch (result) {
 						case Click:
-							// 広告のクリック
+							// リンクボタンがクリックされたので閉じました
 							break;
 						case Close:
+							// 閉じるボタンがクリックされたので閉じました
+							break;
+						case CloseFromApp:
 							// 広告のクローズ
 							break;
+						case Duplicated:
+							// 既に開かれているので開きませんでした
+							break;
 						case Failure:
-							// 広告取得の失敗
+							// 広告の取得に失敗しました
 							break;
 						}
 					}
