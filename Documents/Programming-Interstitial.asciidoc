@@ -39,7 +39,7 @@ TIP: パネル以外の画像を標準画像から変える場合は、担当営
 
 === スクリプト例
 
-.ViewController
+.MainActivity
 [source,java]
 ----
 public class MainActivity extends Activity {
