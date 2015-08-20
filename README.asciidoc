@@ -27,7 +27,13 @@ link:Documents/Overview-Display.asciidoc[概要]::
 link:Documents/Programming-Display.asciidoc[実装ガイド]::
 ディスプレイ広告の実装方法
 
+link:Documents/Programming-Interstitial.asciidoc[実装ガイド(インタースティシャル)]::
+ディスプレイ広告の実装方法
+
 link:Samples/AMoAdBannerSample[サンプルコード]::
+管理画面から取得したsidを入力して動かしてください
+
+link:Samples/AMoAdInterstitialSample[サンプルコード(インタースティシャル)]::
 管理画面から取得したsidを入力して動かしてください
 
 link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/banner_sdk_javadoc/index.html[APIリファレンス]::
