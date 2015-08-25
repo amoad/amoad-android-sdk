@@ -18,13 +18,13 @@ toc::[]
 :numbered:
 :sectnums:
 
-== 広告を表示するスクリプト
+== 広告を表示する
 
-=== スクリプトの流れ
+=== 実装の流れ
 
 . 管理画面から発行されるsidを指定してモジュールを登録します。 +
 `com.amoad.InterstitialAd.prepare(this, SID);`
-. パネル画像をUIImageオブジェクトで設定します。 +
+. パネル画像を設定します。 +
 `com.amoad.InterstitialAd.setPanel(SID, R.drawable.amoad_panel);`
 . ボタン押下時など広告の表示を開始したいタイミングで、以下のメソッドを呼び出します。 +
 ```
@@ -37,7 +37,7 @@ com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener(
 
 TIP: パネル以外の画像を標準画像から変える場合は、担当営業までお問合せください
 
-=== スクリプト例
+=== 実装例
 
 .MainActivity
 [source,java]
@@ -90,10 +90,8 @@ public class MainActivity extends Activity {
 }
 ----
 
-=== パラメタの説明
-
-InterstitialAd
-
+== API詳細
+=== InterstitialAdクラス
 ==== prepare関数
 管理画面から発行されるsidに紐づく広告情報を登録します。
 [options="header"]
