@@ -1,0 +1,131 @@
+:Version: 3.9.1
+:toc: macro
+:toc-title: 目次
+:toclevels: 4
+
+= プリロール広告ガイド AMoAd SDK {version} Guide for Android
+
+NOTE: プリロール広告の概要については、link:Overview-PreRoll.asciidoc[こちら]をご参照ください。
+
+NOTE: SDKのインストールについてはlink:Setup.asciidoc[こちら]をご参照ください。
+
+NOTE: モジュールのダウンロードはこちら（link:https://github.com/amoad/amoad-android-sdk/releases/latest[安定版]/link:https://github.com/amoad/amoad-android-sdk/releases#[最新版]）からお願いします。
+
+NOTE: サンプルコードが/Samples/AMoAdPreRollSample/にありますので、管理画面から取得したsidを入力して動かしてください。
+
+toc::[]
+
+:numbered:
+:sectnums:
+
+== 広告を表示する
+
+=== 実装の流れ
+
+. 管理画面から発行されるsidを指定してモジュールを登録します。 +
+[source,java]
+NativePreRoll.prepareAd(this, SID);
+
+. 広告分析情報を作成する。 +
+[source,java]
+  Analytics analytics = new Analytics(report_id);
+  analytics.setParameter("key1", value1);
+
+. 広告を画面に表示する。 +
+[source,java]
+RelativeLayout containerView = (RelativeLayout) findViewById(R.id.relativelayout);
+NativePreRoll.renderAd(this, SID, TAG1, containerView, analytics, new OnReceiveListener() {
+  @Override
+	public void onReceive(String sid, AMoAdResult result) {
+	}
+});
+
+=== 実装例
+
+.MainActivity
+[source,java]
+----
+public class MainActivity extends Activity {
+	private static final String SID = "管理画面から取得したプリロール広告のsidを指定してください";
+	private static final String TAG1 = "TAG1";
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		// [SDK] 広告分析情報を生成する
+		// => ご利用の際は担当営業までお問い合わせください。利用しない場合は、nullを指定してください。
+		String report_id = "ABCD"; // レポートを細分化するためのID
+		String value1 = "ABCD"; // パブリッシャ様が任意に指定できる分析用パラメタ文字列
+		String value2 = "ABCD"; // パブリッシャ様が任意に指定できる分析用パラメタ文字列
+		String value3 = "ABCD"; // パブリッシャ様が任意に指定できる分析用パラメタ文字列
+
+		com.amoad.Analytics analytics = new com.amoad.Analytics(report_id);
+		analytics.setParameter("key1", value1);
+		analytics.setParameter("key2", value2);
+		analytics.setParameter("key3", value3);
+
+		com.amoad.NativePreRoll.prepareAd(this, SID);
+		com.amoad.NativePreRoll.renderAd(this, SID, TAG1, (RelativeLayout) (findViewById(R.id.relativelayout)), analytics, new com.amoad.OnReceiveListener() {
+			@Override
+			public void onReceive(String sid, com.amoad.AMoAdResult result) {
+				switch (result.result) {
+				case Success:
+					Log.d("MainActivity", "広告受信成功:" + sid + ", " + result.tag);
+					break;
+				case Failure:
+					Log.d("MainActivity", "広告受信失敗:" + sid + ", " + result.tag);
+					break;
+				case Empty:
+					Log.d("MainActivity", "配信する広告が無い:" + sid + ", " + result.tag);
+					break;
+				}
+			}
+		});
+	}
+}
+----
+
+== API詳細
+=== NativePreRollクラス
+
+==== prepareAd関数
+管理画面から発行されるsidに紐づく広告情報を登録します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|context |Context 2+|ActivityまたはApplicationContext
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|===
+
+==== renderAd関数
+広告を画面に表示する。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|context |Context 2+|ActivityまたはApplicationContext
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|tag |String 2+|同じsidを複数のViwで使用する場合,一意に管理する為に使用する
+|containerView |FrameLayoutまたは、RelativeLayout 2+|広告を乗せるビュー
+|analytics |Analytics 2+|広告分析用データ
+|listener |OnReceiveListener 2+|コールバック
+|===
+
+=== Analyticsクラス
+==== constructor
+広告レポートIDを設定します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|reportId |String 2+|広告レポートID
+|===
+
+==== setParameter関数
+広告分析情報を設定します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|key |String 2+|データ名
+|value |String 2+|データ値
+|===
