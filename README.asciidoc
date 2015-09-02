@@ -1,14 +1,14 @@
-:Version: 3.9.1
+:Version: 3.9.2
 = AMoAd SDK {version} Guide for Android
 
 * ダウンロード
-** link:https://github.com/amoad/amoad-android-sdk/releases/latest[安定版ダウンロードページ]
-** link:https://github.com/amoad/amoad-android-sdk/releases#[最新版ダウンロードページ]
+** link:https://github.com/amoad/amoad-android-sdk/archive/PreRollAlfa.zip[最新版ダウンロードページ]
 
 :numbered:
 :sectnums:
 == 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+** [NEW] PreRoll広告のAnalytics関連の不具合対応
 ** [NEW] PreRoll広告のコールバックのResultタイプ追加
 ** [NEW] PreRoll広告追加
 ** [NEW] AMoAdView#setResponsiveStyle()関数を呼ばないと広告が表示されないことのバグ対応
