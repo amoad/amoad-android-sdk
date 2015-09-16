@@ -24,7 +24,7 @@ image:images/preroll_sample.png[
 [options="header"]
 |===
 |OS |対応状況 |マニュアル |サンプルコード
-|iOS |対応済み |- |-
+|iOS |対応済み |link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Native/Guide_preroll.asciidoc[あり] |https://github.com/amoad/amoad-ios-sdk/blob/master/Samples/NativePreRoll/AMoAdNativePreRoll[あり]
 |Android |対応済み |link:Programming-PreRoll.asciidoc[あり] |link:../Samples/AMoAdPreRollSample/[あり]
 |===
 
@@ -49,4 +49,3 @@ image:images/admin_preroll.png["管理画面の設定", width=600px]
 - 画面下部のマージンは91dpi(横画面61dpi)で固定値です。
 
 NOTE: 広告取得の結果をコールバックで返します。（成功、失敗、配信なし）
-
