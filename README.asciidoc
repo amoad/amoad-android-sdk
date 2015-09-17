@@ -70,7 +70,7 @@ link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_java
 JavaDocドキュメント
 
 === プリロール
-link:Documents/Overview-PreRoll.asciidoc[概要]::
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Native/Overview_preroll.asciidoc[概要]::
 マンガアプリなどで、コンテンツの前後に入れる広告です。
 link:Documents/Programming-PreRoll.asciidoc[実装ガイド]::
 AMoAd SDKでは、プリロール広告を簡単に表示するAPIを提供しています
