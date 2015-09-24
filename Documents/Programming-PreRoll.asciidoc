@@ -5,7 +5,7 @@
 
 = プリロール広告ガイド AMoAd SDK {version} Guide for Android
 
-NOTE: プリロール広告の概要については、link:Overview-PreRoll.asciidoc[こちら]をご参照ください。
+NOTE: プリロール広告の概要については、link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Native/Overview_preroll.asciidoc[こちら]をご参照ください。
 
 NOTE: SDKのインストールについてはlink:Setup.asciidoc[こちら]をご参照ください。
 
