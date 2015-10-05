@@ -78,7 +78,7 @@ link:Samples/AMoAdPreRollSample/[サンプルコード]::
 管理画面から取得したsidを入力して動かしてください
 
 == インタースティシャル（全画面）広告
-link:Documents/Overview-Interstitial.asciidoc[概要]::
+link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Interstitial/Guide.asciidoc[概要]::
 インタースティシャル（全画面）広告とは、AMoAdネットワークのレクタングル広告（300x250）をカスタマイズ可能なパネルに乗せて全画面表示させる機能です
 
 NOTE: Unityプラグイン、Cocos2d-xモジュールに対応しています
