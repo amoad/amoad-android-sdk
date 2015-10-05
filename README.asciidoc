@@ -20,8 +20,10 @@
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-android-sdk/issues[こちら] 。
 
 == SDKインストール
-link:Documents/Setup.asciidoc[SDKインストールガイド]::
 SDK共通のインストール方法
+
+.. link:Documents/Setup-AndroidStudio.asciidoc[Android Studio版]
+.. link:Documents/Setup-Eclipse.asciidoc[Eclipse版]
 
 == ディスプレイ広告
 link:Documents/Overview-Display.asciidoc[概要]::
