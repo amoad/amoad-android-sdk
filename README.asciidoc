@@ -1,4 +1,4 @@
-:Version: 3.9.4
+:Version: 3.9.5
 = AMoAd SDK {version} Guide for Android
 
 * ダウンロード
@@ -9,6 +9,7 @@
 :sectnums:
 == 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+** [NEW] Android 6.0 のApache Http通信廃止の対応
 ** [NEW] インタースティシャル（全画面）広告のバグ対応（クラッシュレポート対応）
 ** [NEW] PreRoll広告に対応しました。
 ** [NEW] インタースティシャル（全画面）広告のバグ対応
