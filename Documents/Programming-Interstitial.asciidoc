@@ -11,7 +11,8 @@ NOTE: SDKのインストールについてはlink:Setup.asciidoc[こちら]を�
 
 NOTE: モジュールのダウンロードはこちら（link:https://github.com/amoad/amoad-android-sdk/releases/latest[安定版]/link:https://github.com/amoad/amoad-android-sdk/releases#[最新版]）からお願いします。
 
-NOTE: サンプルコードが/Samples/AMoAdInterstitialSample/にありますので、管理画面から取得したsidを入力して動かしてください。
+NOTE: サンプルコードが/Samples/Eclipse/AMoAdInterstitialSample/と + 
+/Samples/AndroidStudio/AMoAdInterstitialSample/にありますので、管理画面から取得したsidを入力して動かしてください。
 
 toc::[]
 
