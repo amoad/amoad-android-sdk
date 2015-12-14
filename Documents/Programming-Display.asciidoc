@@ -142,3 +142,23 @@ AMoAd SDKを制御する際は、管理画面の「自動更新間隔」に「0�
 image:images/default_banner.png[width="400px"]
 
 . 広告枠の審査が完了すると、広告主から提供されている広告が配信されるようになります。
+
+=== デバッグ方法
+
+.ログをコンソールに出力する
+[source, java]
+----
+  AMoAdLogger.getInstance().setEnabled(true);
+----
+
+.SDKログをキャッチする
+[source, java]
+----
+AMoAdLogger.getInstance().setEnabled(true);
+AMoAdLogger.getInstance().addAMoAdLoggerListener(new AMoAdLoggerListener() {
+ @Override
+    public void onLog(int level, String tag, String msg, Throwable throwable) {
+        // ログをキャッチする
+    }
+});
+----
