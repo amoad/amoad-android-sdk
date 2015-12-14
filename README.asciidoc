@@ -1,4 +1,4 @@
-:Version: 3.9.5
+:Version: 4.0.0
 = AMoAd SDK {version} Guide for Android
 
 * ダウンロード
@@ -9,22 +9,25 @@
 :sectnums:
 == 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+** [NEW] WebViewのダイレクトストアー対応
+** [NEW] ディスプレイ広告のダイレクトストア対応(ウェブブラウザーを通らずにストアアプリに遷移する)
 ** [NEW] Android 6.0 のApache Http通信廃止の対応
-** [NEW] インタースティシャル（全画面）広告のバグ対応（クラッシュレポート対応）
-** [NEW] PreRoll広告に対応しました。
-** [NEW] インタースティシャル（全画面）広告のバグ対応
-** [NEW] インタースティシャル（全画面）広告に対応しました（Unityプラグイン、Cocos2d-xモジュール）
-** [NEW] renderAdのAMoAdNativeFailureListenerを指定するメソッドを誤って削除したので、復活させました（詳しくはlink:Documents/Programming-NativeApp.asciidoc#広告の取得失敗リスナーを設定する[こちら]を参照ください）。大変ご迷惑をおかけいたしました。
-** ネイティブ広告リスナーを追加しました（詳しくは、link:Documents/Programming-NativeApp.asciidoc#広告リスナーを設定する[ネイティブ（App）] / link:Documents/Programming-NativeListView.asciidoc#広告リスナーを設定する[リストビュー]）。
-** [NEW] バナー広告がUnityに対応しました（詳しくは<<Unityプラグイン, こちら>>）。
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-android-sdk/issues[こちら] 。
+
+NOTE: WebViewへアドタグを貼る時の実装方法はlink:https://github.com/amoad/amoad-ios-sdk/blob/master/WebView/guide.md[こちら]をご参照ください。
 
 == SDKインストール
 SDK共通のインストール方法
 
 .. link:Documents/Setup-AndroidStudio.asciidoc[Android Studio版]
 .. link:Documents/Setup-Eclipse.asciidoc[Eclipse版]
+
+== WebView広告
+WebViewへアドタグを貼る。
+
+link:Documents/Programming-WebView.asciidoc[実装ガイド]::
+実装方法
 
 == ディスプレイ広告
 link:Documents/Overview-Display.asciidoc[概要]::
@@ -38,13 +41,13 @@ link:Documents/Programming-Interstitial.asciidoc[実装ガイド(インタース
 
 サンプルコード::
 管理画面から取得したsidを入力して動かしてください
-- link:Samples/Eclipse/AMoAdBannerSample[Eclipse版]
-- link:Samples/AndroidStudio/AMoAdBannerSample[AndroidStudio版]
+- link:Samples/Eclipse/Display/AMoAdBannerSample[Eclipse版]
+- link:Samples/AndroidStudio/Display/AMoAdBannerSample[AndroidStudio版]
 
 サンプルコード(インタースティシャル)::
 管理画面から取得したsidを入力して動かしてください
-- link:Samples/Eclipse/AMoAdInterstitialSample[Eclipse版]
-- link:Samples/AndroidStudio/AMoAdInterstitialSample[AndroidStudio版]
+- link:Samples/Eclipse/DisplayInterstitial/AMoAdInterstitialSample[Eclipse版]
+- link:Samples/AndroidStudio/DisplayInterstitial/AMoAdInterstitialSample[AndroidStudio版]
 
 link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/banner_sdk_javadoc/index.html[APIリファレンス]::
 JavaDocドキュメント
@@ -59,14 +62,14 @@ AMoAd SDKでは、ネイティブApp広告を簡単に表示するAPIを提供�
 管理画面から取得したsidを入力して動かしてください
 
 * Eclipse版
-** link:Samples/Eclipse/AMoAdNativeAppTextSample/[テキスト広告]
-** link:Samples/Eclipse/AMoAdNativeAppIconTextSample/[アイコンテキスト広告]
-** link:Samples/Eclipse/AMoAdNativeAppImageTextSample/[メイン画像テキスト広告]
+** link:Samples/Eclipse/Native/AMoAdNativeAppTextSample/[テキスト広告]
+** link:Samples/Eclipse/Native/AMoAdNativeAppIconTextSample/[アイコンテキスト広告]
+** link:Samples/Eclipse/Native/AMoAdNativeAppImageTextSample/[メイン画像テキスト広告]
 
 * AndroidStudio版
-** link:Samples/AndroidStudio/AMoAdNativeAppTextSample/[テキスト広告]
-** link:Samples/AndroidStudio/AMoAdNativeAppIconTextSample/[アイコンテキスト広告]
-** link:Samples/AndroidStudio/AMoAdNativeAppImageTextSample/[メイン画像テキスト広告]
+** link:Samples/AndroidStudio/Native/AMoAdNativeAppTextSample/[テキスト広告]
+** link:Samples/AndroidStudio/Native/AMoAdNativeAppIconTextSample/[アイコンテキスト広告]
+** link:Samples/AndroidStudio/Native/AMoAdNativeAppImageTextSample/[メイン画像テキスト広告]
 
 link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_javadoc/index.html[APIリファレンス]::
 JavaDocドキュメント
@@ -80,14 +83,14 @@ AMoAd SDKでは、リストビュー広告を簡単に表示するAPIを提供�
 管理画面から取得したsidを入力して動かしてください
 
 * Eclipse版
-** link:Samples/Eclipse/AMoAdNativeListViewTextSample/[テキスト広告]
-** link:Samples/Eclipse/AMoAdNativeListViewIconTextSample/[アイコンテキスト広告]
-** link:Samples/Eclipse/AMoAdNativeListViewImageTextSample/[メイン画像テキスト広告]
+** link:Samples/Eclipse/Native/AMoAdNativeListViewTextSample/[テキスト広告]
+** link:Samples/Eclipse/Native/AMoAdNativeListViewIconTextSample/[アイコンテキスト広告]
+** link:Samples/Eclipse/Native/AMoAdNativeListViewImageTextSample/[メイン画像テキスト広告]
 
 * AndroidStudio版
-** link:Samples/AndroidStudio/AMoAdNativeListViewTextSample/[テキスト広告]
-** link:Samples/AndroidStudio/AMoAdNativeListViewIconTextSample/[アイコンテキスト広告]
-** link:Samples/AndroidStudio/AMoAdNativeListViewImageTextSample/[メイン画像テキスト広告]
+** link:Samples/AndroidStudio/Native/AMoAdNativeListViewTextSample/[テキスト広告]
+** link:Samples/AndroidStudio/Native/AMoAdNativeListViewIconTextSample/[アイコンテキスト広告]
+** link:Samples/AndroidStudio/Native/AMoAdNativeListViewImageTextSample/[メイン画像テキスト広告]
 
 link:https://rawgit.com/amoad/amoad-android-sdk/master/Documents/native_sdk_javadoc/index.html[APIリファレンス]::
 JavaDocドキュメント
@@ -100,8 +103,8 @@ AMoAd SDKでは、プリロール広告を簡単に表示するAPIを提供し�
 
  サンプルコード::
  管理画面から取得したsidを入力して動かしてください
-- link:Samples/Eclipse/AMoAdPreRollSample/[Eclipse版]
-- link:Samples/AndroidStudio/AMoAdPreRollSample/[AndroidStudio版]
+- link:Samples/Eclipse/NativePreRoll/AMoAdPreRollSample/[Eclipse版]
+- link:Samples/AndroidStudio/NativePreRoll/AMoAdPreRollSample/[AndroidStudio版]
 
 == インタースティシャル（全画面）広告
 link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Interstitial/Guide.asciidoc[概要]::

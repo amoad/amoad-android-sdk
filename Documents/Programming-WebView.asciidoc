@@ -1,0 +1,93 @@
+:Version: 4.0.0
+:toc: macro
+:toc-title: 目次
+:toclevels: 4
+
+= AMoAd SDK {version} Guide for Android-WebView
+
+toc::[]
+
+:numbered:
+:sectnums:
+
+# WebViewサポート機能 実装ガイド
+## 概要
+WebViewにアドタグを貼るとき以下の機能を提供する。
+
+. IDFA連携
+. 広告クリックで外部ブラウザを起動する
+. ダイレクトストア（ブラウザを介さずにストアへ遷移する：対応キャンペーンのみ）
+
+※ インフォマーカー／PR表記リンクのクリックでも外部ブラウザへ遷移します。
+
+※ SDKを使えない場合は、link:https://github.com/amoad/amoad-ios-sdk/blob/master/WebView/guide.md[こちら]の方法で広告クリックをハンドリングしてください。
+
+## インストール
+インストールガイド
+
+* link:Setup-AndroidStudio.asciidoc[AndroidStudioの場合]
+* link:Setup-Eclipse.asciidoc[Eclipseの場合]
+
+## 実装
+
+#### AMoAdWebの利用を開始する
+AMoAdWeb クラスの prepareAd メソッドを呼んでおく。（ActivityのonCreateなどで）
+[source, java]
+----
+AMoAdWeb.prepareAd(this);
+----
+
+#### WebViewClientをオーバーライドする
+WebViewClientのshouldOverrideUrlLoadingをオーバーライドして広告クリックをハンドリングする。
+[source, java]
+----
+WebView webView = (WebView) findViewById(R.id.webview);
+webView.setWebViewClient(new WebViewClient() {
+	@Override
+	public boolean shouldOverrideUrlLoading(WebView view, String url) {
+		if (AMoAdWeb.shouldOverrideUrlLoading(view, url)) {
+			return true;
+		}
+		return false;
+	}
+});
+----
+
+#### アドタグを読み込む
+アドタグが貼られているHTMLを、以下の方法で読込む。
+
+* ウェブからロードする
+
+[source, java]
+----
+// TODO ad.htmlに管理画面から取得したアドタグを設定してください
+webView.loadUrl("http://xxx.yyy/ad.html");
+----
+
+* ファイルからロードする +
+(Android 5.0以降はIDFA連携とダイレクトストアができないため、ウェブからロードをお勧めします。)
+
+[source, java]
+----
+// TODO ad.htmlに管理画面から取得したタグを設定してください
+webView.loadUrl("file:///android_asset/ad.html");
+----
+
+* 文字列からロードする +
+(Android 5.0以降はIDFA連携とダイレクトストアができないため、ウェブからロードをお勧めします。)
+
+[source, java]
+----
+// TODO 管理画面から取得したタグを設定してください。
+StringBuilder html = new StringBuilder();
+html.append("<div class='amoad_frame sid_xxxxxxxxxx ...'></div>");
+html.append("<script src='http://.....js' ...'></script>");
+// TODO 「 http://example.com/ 」を適切なURLに置き換えてください。
+webView.loadDataWithBaseURL("http://example.com", html.toString(), "text/html", "utf-8", null);
+----
+
+## サンプルコード
+管理画面から取得したアドタグを設定して動かしてください
+
+* link:../Samples/Eclipse/WebView/AMoAdWebViewSample[Eclipse版]
+* link:../Samples/AndroidStudio/WebView/AMoAdWebViewSample[AndroidStudio版]
