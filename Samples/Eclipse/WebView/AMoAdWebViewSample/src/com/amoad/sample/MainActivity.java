@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         html.append("<div class='amoad_frame sid_xxxxxxxxxx ...'></div>");
         html.append("<script src='http://.....js' ...'></script>");
         // TODO 「 http://example.com/ 」を適切なURLに置き換えてください。
-        webView.loadDataWithBaseURL("http://example.com", html.toString(), "text/html", "utf-8", null);
+        mWebView.loadDataWithBaseURL("http://example.com", html.toString(), "text/html", "utf-8", null);
     }
 
     private void loadLocalFile() {
