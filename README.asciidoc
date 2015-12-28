@@ -1,4 +1,4 @@
-:Version: 4.0.0
+:Version: 4.0.1
 = AMoAd SDK {version} Guide for Android
 
 * ダウンロード
@@ -9,6 +9,7 @@
 :sectnums:
 == 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
+** [NEW] InterstitialAdの閉じるボタンがタブレットで右寄せになる不具合対応
 ** [NEW] WebViewのダイレクトストアー対応
 ** [NEW] ディスプレイ広告のダイレクトストア対応(ウェブブラウザーを通らずにストアアプリに遷移する)
 ** [NEW] Android 6.0 のApache Http通信廃止の対応
