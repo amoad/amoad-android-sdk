@@ -1,22 +1,44 @@
 :Version: 4.0.1
 = AMoAd SDK {version} Guide for Android
 
-* ダウンロード
-** link:https://github.com/amoad/amoad-android-sdk/releases/latest[安定版ダウンロードページ]
-** link:https://github.com/amoad/amoad-android-sdk/releases#[最新版ダウンロードページ]
+link:https://github.com/amoad/amoad-ios-sdk/archive/master.zip[ZIPをダウンロード]
 
 :numbered:
 :sectnums:
 == 概要
 * link:https://github.com/amoad/amoad-android-sdk/releases[更新履歴]
-** [NEW] InterstitialAdの閉じるボタンがタブレットで右寄せになる不具合対応
-** [NEW] WebViewのダイレクトストアー対応
-** [NEW] ディスプレイ広告のダイレクトストア対応(ウェブブラウザーを通らずにストアアプリに遷移する)
-** [NEW] Android 6.0 のApache Http通信廃止の対応
+** InterstitialAdの閉じるボタンがタブレットで右寄せになる不具合対応
+** WebViewのダイレクトストアー対応
+** ディスプレイ広告のダイレクトストア対応(ウェブブラウザーを通らずにストアアプリに遷移する)
+** Android 6.0 のApache Http通信廃止の対応
+** link:Documents/Programming-WebView.asciidoc[WebViewサポート機能 実装ガイド]を追加しました。
+** **[NEW] スタイルを管理画面よりHTML+CSSでデザインできる「ネイティブHTML広告」機能を追加しました。**
 
-NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-android-sdk/issues[こちら] 。
+NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
-NOTE: WebViewへアドタグを貼る時の実装方法はlink:https://github.com/amoad/amoad-ios-sdk/blob/master/WebView/guide.md[こちら]をご参照ください。
+== ネイティブHTML広告
+
+スタイルを管理画面よりHTML+CSSでデザインできるネイティブ広告です。
+
+.管理画面
+[source,objective-c]
+----
+枠の種類: WEB
+表示形式: ネイティブ（Web）
+----
+
+.デモアプリ
+. link:https://github.com/amoad/amoad-native-ios-sdk[iOSで開発される方]
+
+. link:https://github.com/amoad/amoad-native-android-sdk[Androidで開発される方]
+
+. link:https://github.com/amoad/amoad-native-unity-sdk[Unityで開発される方]
+
+. link:https://github.com/amoad/amoad-native-cocos2dx-sdk[Cocos2d-xで開発される方]
+
+※ 各デモアプリをダウンロードして、アプリに組み込んでください。
+
+※ SSL対応なので、ATS (App Transport Security) 抑制設定は不要です。
 
 == SDKインストール
 SDK共通のインストール方法
@@ -24,7 +46,7 @@ SDK共通のインストール方法
 .. link:Documents/Setup-AndroidStudio.asciidoc[Android Studio版]
 .. link:Documents/Setup-Eclipse.asciidoc[Eclipse版]
 
-== WebView広告
+== WebViewサポート機能
 WebViewへアドタグを貼る。
 
 link:Documents/Programming-WebView.asciidoc[実装ガイド]::
