@@ -1,7 +1,7 @@
 :Version: 4.0.1
 = AMoAd SDK {version} Guide for Android
 
-link:https://github.com/amoad/amoad-ios-sdk/archive/master.zip[ZIPをダウンロード]
+link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[ZIPをダウンロード]
 
 :numbered:
 :sectnums:
