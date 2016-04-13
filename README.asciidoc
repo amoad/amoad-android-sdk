@@ -28,15 +28,8 @@ SDK共通のインストール方法
 
 スタイルを管理画面よりHTML+CSSでデザインできるネイティブ広告です。
 
-.管理画面
-[source,objective-c]
-----
-枠の種類: WEB
-表示形式: ネイティブ（Web）
-----
 
 .デモアプリ
-. link:https://github.com/amoad/amoad-native-ios-sdk[iOSで開発される方]
 
 . link:https://github.com/amoad/amoad-native-android-sdk[Androidで開発される方]
 
@@ -48,33 +41,26 @@ SDK共通のインストール方法
 
 ※ SSL対応なので、ATS (App Transport Security) 抑制設定は不要です。
 
-== WebViewサポート機能
-WebViewへアドタグを貼る。
-
-link:Documents/Programming-WebView.asciidoc[実装ガイド]::
-実装方法
-
 == インフィード広告
-link:https://github.com/amoad/amoad-nativelist-android-sdk[概要]::
-アプリのデザインにあわせて広告を表示することができます。
+アプリのコンテンツに広告画像とテキストを表示することができるネイティブ広告です。
 
-link:https://github.com/amoad/amoad-nativelist-android-sdk/tree/master/AMoAdInfeedAdDemo[実装ガイド]::
-インフィード広告の実装方法(デモアプリ)
+link:https://github.com/amoad/amoad-nativelist-android-sdk/tree/master/AMoAdInfeedAdDemo[デモアプリ]
+
+※ デモアプリをダウンロードして、アプリに組み込んでください。
 
 == ディスプレイ広告
-link:Documents/Overview-Display.asciidoc[概要]::
-画像やテキストを決まっているレイアウトで表示する
-
+=== インライン広告
 link:Documents/Programming-Display.asciidoc[実装ガイド]::
-ディスプレイ広告の実装方法
-
-link:Documents/Programming-Interstitial.asciidoc[実装ガイド(インタースティシャル)]::
 ディスプレイ広告の実装方法
 
 サンプルコード::
 管理画面から取得したsidを入力して動かしてください
 - link:Samples/Eclipse/Display/AMoAdBannerSample[Eclipse版]
 - link:Samples/AndroidStudio/Display/AMoAdBannerSample[AndroidStudio版]
+
+=== インタースティシャル（全画面）広告
+link:Documents/Programming-Interstitial.asciidoc[実装ガイド(インタースティシャル)]::
+ディスプレイ広告の実装方法
 
 サンプルコード(インタースティシャル)::
 管理画面から取得したsidを入力して動かしてください
@@ -174,4 +160,10 @@ link:Documents/AdMobSetup.asciidoc[導入ガイド]::
 アダプタの導入方法とAdMobメディエーションの設定についてのガイドです
 
 https://github.com/amoad/amoad-android-sdk/raw/master/AdMobMediation/AMoAdGmAdapter.jar[アダプタのダウンロード]::
-アダプタの導入方法とAdMobメディエーションの設定についてのガイドです
+最新版のアダプタはこちらからダウンロードできます
+
+== WebViewサポート機能
+WebViewへアドタグを貼る。
+
+link:Documents/Programming-WebView.asciidoc[実装ガイド]::
+実装方法
