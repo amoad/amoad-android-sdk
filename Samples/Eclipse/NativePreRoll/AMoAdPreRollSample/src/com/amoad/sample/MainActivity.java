@@ -1,5 +1,7 @@
 package com.amoad.sample;
 
+import com.amoad.AMoAdError;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +38,17 @@ public class MainActivity extends Activity {
 					break;
 				case Failure:
 					Log.d("MainActivity", "広告受信失敗:" + sid + ", " + result.tag);
+					AMoAdError error = result.error;
+					if (error != null) {
+						switch(error.getCode()){
+						case AMoAdError.NOT_PREPARED:
+							Log.d("MainActivity", "prepareAdが呼ばれてない");
+							break;
+						case AMoAdError.OUT_OF_MEMORY:
+							Log.d("MainActivity", "メモリ不足のため広告を表示できません。");
+							break;
+						}
+					}
 					break;
 				case Empty:
 					Log.d("MainActivity", "配信する広告が無い:" + sid + ", " + result.tag);

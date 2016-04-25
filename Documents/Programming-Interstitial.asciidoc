@@ -1,4 +1,4 @@
-:Version: 4.3.1
+:Version: 4.4.0
 :toc: macro
 :toc-title: 目次
 :toclevels: 4
@@ -24,17 +24,37 @@ toc::[]
 === 実装の流れ
 
 . 管理画面から発行されるsidを指定してモジュールを登録します。 +
-`com.amoad.InterstitialAd.prepare(this, SID);`
-. パネル画像を設定します。 +
-`com.amoad.InterstitialAd.setPanel(SID, R.drawable.amoad_panel);`
+
+	com.amoad.InterstitialAd.prepare(this, SID);
+
+. 縦・横画面のパネル画像を設定します。 +
+
+	com.amoad.InterstitialAd.setPortraitPanel(SID, R.drawable.amoad_panel);
+	com.amoad.InterstitialAd.setLandscapePanel(SID, R.drawable.amoad_panel_l);
+
 . ボタン押下時など広告の表示を開始したいタイミングで、以下のメソッドを呼び出します。 +
-```
-com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
-		@Override
-		public void onClose(com.amoad.InterstitialAd.Result result) {
-    }
-});
-```
+
+	com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
+			@Override
+			public void onClose(com.amoad.InterstitialAd.Result result) {
+	    }
+	});
+
+. 画面回転対応のためActivityのonConfigurationChanged()をオーバーライドする。 +
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+			super.onConfigurationChanged(newConfig);
+			com.amoad.InterstitialAd.onConfigurationChanged(newConfig);
+	}
+
+. 画面終了時にインタースティシャル広告を閉じるためonDestroy()をオーバーライドする。 +
+
+	@Override
+	protected void onDestroy() {
+			super.onDestroy();
+			com.amoad.InterstitialAd.close(SID);
+	}
 
 TIP: パネル以外の画像を標準画像から変える場合は、担当営業までお問合せください
 
@@ -44,50 +64,65 @@ TIP: パネル以外の画像を標準画像から変える場合は、担当営
 [source,java]
 ----
 public class MainActivity extends Activity {
-  private static final String SID = "管理画面から発行されるsidを設定してください";
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+	private static final String SID = "管理画面から発行されるsidを設定してください";
 
-    // インタースティシャル広告の準備
-    com.amoad.InterstitialAd.prepare(this, SID);
-    // 閉じるボタン画像（40dpx40dp）
-    com.amoad.InterstitialAd.setCloseButton(SID, R.drawable.amoad_close_btn, R.drawable.amoad_close_btn_h);
-    // リンクボタン画像（280dpx50dp）
-    com.amoad.InterstitialAd.setLinkButton(SID, R.drawable.amoad_link_btn, R.drawable.amoad_link_btn_h);
-    // パネル画像（310dpx380dp）
-    com.amoad.InterstitialAd.setPanel(SID, R.drawable.amoad_panel);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-    findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        // インタースティシャル広告を表示する
-        com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
-          @Override
-          public void onClose(com.amoad.InterstitialAd.Result result) {
-            switch (result) {
-            case Click:
-              // リンクボタンがクリックされたので閉じました
-              break;
-            case Close:
-              // 閉じるボタンがクリックされたので閉じました
-              break;
-            case CloseFromApp:
-              // 広告のクローズ
-              break;
-            case Duplicated:
-              // 既に開かれているので開きませんでした
-              break;
-            case Failure:
-              // 広告の取得に失敗しました
-              break;
-            }
-          }
-        });
-      }
-    });
-  }
+		// インタースティシャル広告の準備
+		com.amoad.InterstitialAd.prepare(this, SID);
+		// 閉じるボタン画像（40dpx40dp）
+		com.amoad.InterstitialAd.setCloseButton(SID, R.drawable.amoad_close_btn, R.drawable.amoad_close_btn_h);
+		// リンクボタン画像（280dpx50dp）
+		com.amoad.InterstitialAd.setLinkButton(SID, R.drawable.amoad_link_btn, R.drawable.amoad_link_btn_h);
+		// 縦画面のパネル画像（310dpx380dp）
+		com.amoad.InterstitialAd.setPortraitPanel(SID, R.drawable.amoad_panel);
+		// 横画面のパネル画像（380dpx310dp）
+		com.amoad.InterstitialAd.setLandscapePanel(SID, R.drawable.amoad_panel_l);
+
+		findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// インタースティシャル広告を表示する
+				com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
+					@Override
+					public void onClose(com.amoad.InterstitialAd.Result result) {
+						switch (result) {
+						case Click:
+							// リンクボタンがクリックされたので閉じました
+							break;
+						case Close:
+							// 閉じるボタンがクリックされたので閉じました
+							break;
+						case CloseFromApp:
+							// 広告のクローズ
+							break;
+						case Duplicated:
+							// 既に開かれているので開きませんでした
+							break;
+						case Failure:
+							// 広告の取得に失敗しました
+							break;
+						}
+					}
+				});
+			}
+		});
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		com.amoad.InterstitialAd.onConfigurationChanged(newConfig);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		com.amoad.InterstitialAd.close(SID);
+	}
 }
 ----
 
@@ -101,13 +136,22 @@ public class MainActivity extends Activity {
 |sid |String 2+|管理画面から発行されるsidを設定してください
 |===
 
-==== setPanel関数
+==== setPortraitPanel関数
 パネル画像を設定します。
 [options="header"]
 |===
 |パラメタ名 |Type 2+|Value
 |sid |String 2+|管理画面から発行されるsidを設定してください
-|resId |int 2+|パネルに使用する画像のリソースＩＤ
+|resId |int 2+|縦画面のパネルに使用する画像のリソースＩＤ
+|===
+
+==== setLandscapePanel関数
+パネル画像を設定します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|resId |int 2+|横画面のパネルに使用する画像のリソースＩＤ
 |===
 
 ==== setLinkButton関数

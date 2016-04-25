@@ -1,4 +1,4 @@
-:Version: 4.3.1
+:Version: 4.4.0
 = AMoAd SDK {version} Guide for Android
 
 link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[ZIPをダウンロード]
@@ -13,7 +13,8 @@ link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[ZIPをダウ�
 ** ディスプレイ広告のダイレクトストア対応(ウェブブラウザーを通らずにストアアプリに遷移する)
 ** Android 6.0 のApache Http通信廃止の対応
 ** link:Documents/Programming-WebView.asciidoc[WebViewサポート機能 実装ガイド]を追加しました。
-** **[NEW] スタイルを管理画面よりHTML+CSSでデザインできる「ネイティブHTML広告」機能を追加しました。**
+** スタイルを管理画面よりHTML+CSSでデザインできる「ネイティブHTML広告」機能を追加しました。
+** **[NEW]インタースティシャル広告の横画面対応**
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
