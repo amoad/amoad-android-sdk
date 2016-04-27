@@ -32,6 +32,14 @@ toc::[]
 	com.amoad.InterstitialAd.setPortraitPanel(SID, R.drawable.amoad_panel);
 	com.amoad.InterstitialAd.setLandscapePanel(SID, R.drawable.amoad_panel_l);
 
+. 広告面をクリックできるかどうかを設定する:default = true
+
+	com.amoad.InterstitialAd.setDisplayClickable(SID, clickable);
+
+. 確認ダイアログを表示するかどうかを設定する:default = true
+
+	com.amoad.InterstitialAd.setDialogShown(SID, shown);
+
 . ボタン押下時など広告の表示を開始したいタイミングで、以下のメソッドを呼び出します。 +
 
 	com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
@@ -56,7 +64,9 @@ toc::[]
 			com.amoad.InterstitialAd.close(SID);
 	}
 
-TIP: パネル以外の画像を標準画像から変える場合は、担当営業までお問合せください
+TIP: パネル以外の画像も設定できます。以下を参照してください。
+画像のサイズについては、
+link:https://github.com/amoad/amoad-ios-sdk/blob/61f6e08a5a27a3390e53c8254aa60edae20f3103/Documents/Interstitial/Guide.asciidoc[こちら]をご参照ください。
 
 === 実装例
 
@@ -81,6 +91,11 @@ public class MainActivity extends Activity {
 		com.amoad.InterstitialAd.setPortraitPanel(SID, R.drawable.amoad_panel);
 		// 横画面のパネル画像（380dpx310dp）
 		com.amoad.InterstitialAd.setLandscapePanel(SID, R.drawable.amoad_panel_l);
+
+		// 広告面をクリックできるかどうかを設定する：デフォルトはtrue
+		//com.amoad.InterstitialAd.setDisplayClickable(SID, false);
+		// 確認ダイアログを表示するかどうかを設定する：デフォルトはtrue
+		//com.amoad.InterstitialAd.setDialogShown(SID, false);
 
 		findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -152,6 +167,24 @@ public class MainActivity extends Activity {
 |パラメタ名 |Type 2+|Value
 |sid |String 2+|管理画面から発行されるsidを設定してください
 |resId |int 2+|横画面のパネルに使用する画像のリソースＩＤ
+|===
+
+==== setDisplayClickable関数
+パネル画像を設定します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|clickable |boolean 2+|広告面をクリックできるかどうかを設定する
+|===
+
+==== setDialogShown関数
+パネル画像を設定します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|shown |boolean 2+|確認ダイアログを表示するかどうかを設定する
 |===
 
 ==== setLinkButton関数
