@@ -170,21 +170,21 @@ public class MainActivity extends Activity {
 |===
 
 ==== setDisplayClickable関数
-パネル画像を設定します。
+広告面をクリックできるかどうかを設定する。
 [options="header"]
 |===
 |パラメタ名 |Type 2+|Value
 |sid |String 2+|管理画面から発行されるsidを設定してください
-|clickable |boolean 2+|広告面をクリックできるかどうかを設定する
+|clickable |boolean 2+|広告面をクリックできるかどうか(default:true)
 |===
 
 ==== setDialogShown関数
-パネル画像を設定します。
+確認ダイアログを表示するかどうかを設定する。
 [options="header"]
 |===
 |パラメタ名 |Type 2+|Value
 |sid |String 2+|管理画面から発行されるsidを設定してください
-|shown |boolean 2+|確認ダイアログを表示するかどうかを設定する
+|shown |boolean 2+|確認ダイアログを表示するかどうか(default:true)
 |===
 
 ==== setLinkButton関数
