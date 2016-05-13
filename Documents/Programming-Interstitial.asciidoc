@@ -1,4 +1,4 @@
-:Version: 4.4.0
+:Version: 4.5.0
 :toc: macro
 :toc-title: 目次
 :toclevels: 4
@@ -25,7 +25,7 @@ toc::[]
 
 . 管理画面から発行されるsidを指定してモジュールを登録します。 +
 
-	com.amoad.InterstitialAd.prepare(this, SID);
+	com.amoad.InterstitialAd.register(SID);
 
 . 縦・横画面のパネル画像を設定します。 +
 
@@ -40,11 +40,23 @@ toc::[]
 
 	com.amoad.InterstitialAd.setDialogShown(SID, shown);
 
+. リロードを手動にしたい場合はautoReloadにfalseを設定する(毎回load関数を呼ぶ必要があります):default = true
+
+	com.amoad.InterstitialAd.setAutoReload(SID, autoReload);
+
+. 広告をロードする。 +
+
+	com.amoad.InterstitialAd.load(activity, SID, new com.amoad.AdLoadListener() {
+		@Override
+		public void onLoaded(com.amoad.AdResult result, com.amoad.AMoAdError error) {
+	    }
+	});
+
 . ボタン押下時など広告の表示を開始したいタイミングで、以下のメソッドを呼び出します。 +
 
 	com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
-			@Override
-			public void onClose(com.amoad.InterstitialAd.Result result) {
+		@Override
+		public void onClose(com.amoad.InterstitialAd.Result result) {
 	    }
 	});
 
@@ -81,8 +93,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		// インタースティシャル広告の準備
-		com.amoad.InterstitialAd.prepare(this, SID);
+		// sidを登録する
+		com.amoad.InterstitialAd.register(SID);
 		// 閉じるボタン画像（40dpx40dp）
 		com.amoad.InterstitialAd.setCloseButton(SID, R.drawable.amoad_close_btn, R.drawable.amoad_close_btn_h);
 		// リンクボタン画像（280dpx50dp）
@@ -96,33 +108,44 @@ public class MainActivity extends Activity {
 		//com.amoad.InterstitialAd.setDisplayClickable(SID, false);
 		// 確認ダイアログを表示するかどうかを設定する：デフォルトはtrue
 		//com.amoad.InterstitialAd.setDialogShown(SID, false);
+		// リロードを手動にしたい場合はautoReloadにfalseを設定する
+		//com.amoad.InterstitialAd.setAutoReload(SID, false);
+
+		// 広告をロードする
+		com.amoad.InterstitialAd.load(this, SID, new com.amoad.AdLoadListener() {
+			@Override
+			public void onLoaded(com.amoad.AdResult result, com.amoad.AMoAdError error) {
+			}
+		});
 
 		findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// インタースティシャル広告を表示する
-				com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
-					@Override
-					public void onClose(com.amoad.InterstitialAd.Result result) {
-						switch (result) {
-						case Click:
-							// リンクボタンがクリックされたので閉じました
-							break;
-						case Close:
-							// 閉じるボタンがクリックされたので閉じました
-							break;
-						case CloseFromApp:
-							// 広告のクローズ
-							break;
-						case Duplicated:
-							// 既に開かれているので開きませんでした
-							break;
-						case Failure:
-							// 広告の取得に失敗しました
-							break;
+				if(com.amoad.InterstitialAd.isLoaded(SID)) {
+					// インタースティシャル広告を表示する
+					com.amoad.InterstitialAd.show(SID, new com.amoad.InterstitialAd.OnCloseListener() {
+						@Override
+						public void onClose(com.amoad.InterstitialAd.Result result) {
+							switch (result) {
+							case Click:
+								// リンクボタンがクリックされたので閉じました
+								break;
+							case Close:
+								// 閉じるボタンがクリックされたので閉じました
+								break;
+							case CloseFromApp:
+								// 広告のクローズ
+								break;
+							case Duplicated:
+								// 既に開かれているので開きませんでした
+								break;
+							case Failure:
+								// 広告の取得に失敗しました
+								break;
+							}
 						}
-					}
-				});
+					});
+				}
 			}
 		});
 	}
@@ -143,7 +166,7 @@ public class MainActivity extends Activity {
 
 == API詳細
 === InterstitialAdクラス
-==== prepare関数
+==== register関数
 管理画面から発行されるsidに紐づく広告情報を登録します。
 [options="header"]
 |===
@@ -207,12 +230,32 @@ public class MainActivity extends Activity {
 |highlighted_resId |int 2+|閉じるボタンに使用する画像（Highlight時）のリソースＩＤ
 |===
 
+==== setAutoReload関数
+管理画面から発行されるsidに紐づく広告情報を登録します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|autoReload |boolean 2+|自動リロードをするかどうか
+|===
+
+==== load関数
+管理画面から発行されるsidに紐づく広告情報を登録します。
+[options="header"]
+|===
+|パラメタ名 |Type 2+|Value
+|activity |Activity 2+|
+|sid |String 2+|管理画面から発行されるsidを設定してください
+|listener |AdLoadListener 2+|広告ロードリスナー
+|===
+
 ==== show関数
 広告の表示を行います。
 [options="header"]
 |===
 |パラメタ名 |Type 2+|Value
 |sid |String 2+|管理画面から発行されるsidを設定してください
+|listener |OnCloseListener 2+|広告のクローズリスナー
 |===
 
 ==== close関数
