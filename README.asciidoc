@@ -12,6 +12,12 @@ link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[ZIPをダウ�
 ** **[NEW] アプリのコンテンツに広告画像とテキストを表示することができる「インフィード広告」機能を追加しました。**
 ** **[NEW] インタースティシャル（全画面）広告が横画面に対応しました（Unityプラグイン、Cocos2d-xモジュールは近日公開予定）。**
 ** **[NEW] インタースティシャル（全画面）広告のインタフェース改善**
+** **[NEW] インタースティシャル広告のプリロード（先読み）に対応しました。**
+I/Fが変わっています。詳しくはこちら(
+link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForAndroidInterstitial[Android] /
+link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForUnityInterstitial[Unity] /
+link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForCocos2dxInterstitial[Cocos2dx])
+をご確認ください。
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
@@ -48,7 +54,7 @@ AMoAd SDKでは、プリロール広告を簡単に表示するAPIを提供し�
 
 - link:Samples/AndroidStudio/NativePreRoll/AMoAdPreRollSample/[サンプルコード(AndroidStudio版)] +
  管理画面から取得したsidを入力して動かしてください
- 
+
 - link:Samples/Eclipse/NativePreRoll/AMoAdPreRollSample/[サンプルコード(Eclipse版)] +
  管理画面から取得したsidを入力して動かしてください
 
@@ -72,21 +78,21 @@ AMoAd SDKでは、プリロール広告を簡単に表示するAPIを提供し�
 
 
 === インタースティシャル（全画面）広告
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Interstitial/Guide.asciidoc[概要] +
+- link:https://github.com/amoad/amoad-android-sdk/wiki/Interstitial[概要] +
 レクタングル広告（300x250）をカスタマイズ可能なパネルに乗せて全画面表示させる機能です
 
 .Androidで開発される方
-- link:Documents/Setup-AndroidStudio.asciidoc[SDK導入ガイド(AndroidStudio版)]
-- link:Documents/Setup-Eclipse.asciidoc[SDK導入ガイド(Eclipse版)]
-- link:Documents/Programming-Interstitial.asciidoc[SDKインタースティシャル実装ガイド]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/SdkInstallForAndroidStudio[SDK導入ガイド(AndroidStudio版)]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/SdkInstallForEclipse[SDK導入ガイド(Eclipse版)]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForAndroidInterstitial[SDKインタースティシャル実装ガイド]
 
 .Unityで開発される方
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Guide.asciidoc[Unityプラグイン インタースティシャル導入ガイド]
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Interstitial.asciidoc[Unityプラグイン インタースティシャル実装ガイド]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/SdkInstallForUnity[Unityプラグイン インタースティシャル導入ガイド]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForUnityInterstitial[Unityプラグイン インタースティシャル実装ガイド]
 
 .Cocos2d-xで開発される方
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Guide.asciidoc[Cocos2d-xモジュール インタースティシャル導入ガイド]
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Interstitial.asciidoc[Cocos2d-xモジュール インタースティシャル実装ガイド]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/SdkInstallForCocos2dx[Cocos2d-xモジュール インタースティシャル導入ガイド]
+- link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForCocos2dxInterstitial[Cocos2d-xモジュール インタースティシャル実装ガイド]
 
 == 旧ネイティブ広告
 ネイティブHTML広告、インフィード広告の利用をご検討ください。
