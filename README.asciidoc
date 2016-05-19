@@ -1,4 +1,4 @@
-:Version: 4.5.0
+:Version: 4.6.0
 = AMoAd SDK {version} Guide for Android
 
 :numbered:
@@ -9,15 +9,16 @@ link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[ZIPをダウ�
 == 更新情報
 * link:https://github.com/amoad/amoad-android-sdk/releases[リリース履歴]
 ** スタイルを管理画面よりHTML+CSSでデザインできる「ネイティブHTML広告」機能を追加しました。
-** **[NEW] アプリのコンテンツに広告画像とテキストを表示することができる「インフィード広告」機能を追加しました。**
-** **[NEW] インタースティシャル（全画面）広告が横画面に対応しました（Unityプラグイン、Cocos2d-xモジュールは近日公開予定）。**
-** **[NEW] インタースティシャル（全画面）広告のインタフェース改善**
+** アプリのコンテンツに広告画像とテキストを表示することができる「インフィード広告」機能を追加しました。
+** インタースティシャル（全画面）広告が横画面に対応しました。
+** インタースティシャル（全画面）広告のインタフェース改善
 ** **[NEW] インタースティシャル広告のプリロード（先読み）に対応しました。**
 I/Fが変わっています。詳しくはこちら(
 link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForAndroidInterstitial[Android] /
 link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForUnityInterstitial[Unity] /
 link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForCocos2dxInterstitial[Cocos2dx])
 をご確認ください。
+** **[NEW] インタースティシャル動画広告配信に対応しました（ 配信開始時期については担当営業までお問合せください）。**
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
@@ -64,17 +65,17 @@ AMoAd SDKでは、プリロール広告を簡単に表示するAPIを提供し�
 === インライン広告
 
 .Androidで開発される方
-- link:Documents/Setup-AndroidStudio.asciidoc[SDK導入ガイド(AndroidStudio版)]
-- link:Documents/Setup-Eclipse.asciidoc[SDK導入ガイド(Eclipse版)]
-- link:Documents/Programming-Display.asciidoc[SDK実装ガイド]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/SdkInstallForAndroidStudio[SDK導入ガイド(AndroidStudio版)]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/SdkInstallForEclipse[SDK導入ガイド(Eclipse版)]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/CodingGuideForAndroidInline[SDK実装ガイド]
 
 .Unityで開発される方
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Guide.asciidoc[Unityプラグイン導入ガイド]
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/UnityPlugin/Display.asciidoc[Unityプラグイン実装ガイド]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/SdkInstallForUnity[Unityプラグイン導入ガイド]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/CodingGuideForUnityInline[Unityプラグイン実装ガイド]
 
 .Cocos2d-xで開発される方
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Guide.asciidoc[Cocos2d-xモジュール導入ガイド]
-- link:https://github.com/amoad/amoad-ios-sdk/blob/master/Documents/Cocos2dxModule/Display.asciidoc[Cocos2d-xモジュール実装ガイド]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/SdkInstallForCocos2dx[Cocos2d-xモジュール導入ガイド]
+- link:https://github.com/yunkwanho/amoad-android-sdk/wiki/CodingGuideForCocos2dxInline[Cocos2d-xモジュール実装ガイド]
 
 
 === インタースティシャル（全画面）広告
