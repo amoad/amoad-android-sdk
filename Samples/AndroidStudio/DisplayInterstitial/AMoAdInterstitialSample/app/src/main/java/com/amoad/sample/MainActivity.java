@@ -18,8 +18,7 @@ import com.amoad.AdResult;
 import com.amoad.InterstitialAd;
 
 public class MainActivity extends Activity {
-//    private static final String SID = "管理画面から発行されるsidを設定してください";
-    private static final String SID = "62056d310111552c25d5488b4d921ac158b4e6a60950024f2454b61d6e44f86c";
+    private static final String SID = "管理画面から発行されるsidを設定してください";
     private EditText mConsole;
 
     @Override
