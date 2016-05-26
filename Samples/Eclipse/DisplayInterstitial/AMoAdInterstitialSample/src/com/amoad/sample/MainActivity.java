@@ -92,8 +92,6 @@ public class MainActivity extends Activity {
         com.amoad.InterstitialAd.setPortraitPanel(SID, R.drawable.amoad_panel);
         // 横画面のパネル画像（380dpx310dp）
         com.amoad.InterstitialAd.setLandscapePanel(SID, R.drawable.amoad_panel_l);
-        // 広告クリック時に確認ダイアログを表示するかどうかを設定する
-        com.amoad.InterstitialAd.setDialogShown(SID, false);
     }
 
     private void loadAd() {
