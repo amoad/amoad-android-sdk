@@ -1,4 +1,4 @@
-:Version: 4.6.1
+:Version: 4.6.2
 = AMoAd SDK {version} Guide for Android
 
 :numbered:
@@ -20,6 +20,7 @@ link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForCocos2dxInter
 をご確認ください。
 ** **[NEW] インタースティシャル動画広告配信に対応しました（ 配信開始時期については担当営業までお問合せください）。**
 ** **[NEW] インタースティシャル表示改善、SDK安定性向上**
+** **[NEW] プリロール広告キャッシュ機能改善**
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
