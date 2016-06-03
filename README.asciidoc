@@ -1,5 +1,4 @@
-:Version: 4.6.2
-= AMoAd SDK {version} Guide for Android
+= AMoAd SDK Guide for Android
 
 :numbered:
 :sectnums:
