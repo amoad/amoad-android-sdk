@@ -17,9 +17,10 @@ link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForAndroidInters
 link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForUnityInterstitial[Unity] /
 link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForCocos2dxInterstitial[Cocos2dx])
 をご確認ください。
-** **[NEW] インタースティシャル動画広告配信に対応しました（ 配信開始時期については担当営業までお問合せください）。**
+** **[NEW] インタースティシャル動画広告配信に対応しました。**
 ** **[NEW] インタースティシャル表示改善、SDK安定性向上**
 ** **[NEW] プリロール広告キャッシュ機能改善**
+** **[NEW] インライン動画広告配信に対応しました（ 配信開始時期については担当営業までお問合せください）。**
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
