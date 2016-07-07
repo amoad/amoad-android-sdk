@@ -7,19 +7,10 @@ link:https://github.com/amoad/amoad-android-sdk/archive/master.zip[ZIPをダウ�
 
 == 更新情報
 * link:https://github.com/amoad/amoad-android-sdk/releases[リリース履歴]
-** スタイルを管理画面よりHTML+CSSでデザインできる「ネイティブHTML広告」機能を追加しました。
-** アプリのコンテンツに広告画像とテキストを表示することができる「インフィード広告」機能を追加しました。
-** インタースティシャル（全画面）広告が横画面に対応しました。
-** インタースティシャル（全画面）広告のインタフェース改善
-** **[NEW] インタースティシャル広告のプリロード（先読み）に対応しました。**
-I/Fが変わっています。詳しくはこちら(
-link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForAndroidInterstitial[Android] /
-link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForUnityInterstitial[Unity] /
-link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForCocos2dxInterstitial[Cocos2dx])
-をご確認ください。
-** **[NEW] インタースティシャル動画広告配信に対応しました（ 配信開始時期については担当営業までお問合せください）。**
-** **[NEW] インタースティシャル表示改善、SDK安定性向上**
-** **[NEW] プリロール広告キャッシュ機能改善**
+** インタースティシャル動画広告配信に対応しました。
+** インタースティシャル表示改善、SDK安定性向上
+** プリロール広告キャッシュ機能改善
+** **[NEW] インライン動画広告サポート**
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら] 。
 
@@ -31,7 +22,7 @@ NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:ht
 .デモアプリ
 - link:https://github.com/amoad/amoad-native-android-sdk[Androidで開発される方]
 
-- link:https://github.com/amoad/amoad-native-unity-sdk[Unityで開発される方]
+- link:https://github.com/amoad/amoad-unity-plugin[Unityで開発される方]
 
 - link:https://github.com/amoad/amoad-native-cocos2dx-sdk[Cocos2d-xで開発される方]
 
@@ -71,8 +62,7 @@ AMoAd SDKでは、プリロール広告を簡単に表示するAPIを提供し�
 - link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForAndroidInline[SDK実装ガイド]
 
 .Unityで開発される方
-- link:https://github.com/amoad/amoad-android-sdk/wiki/SdkInstallForUnity[Unityプラグイン導入ガイド]
-- link:https://github.com/amoad/amoad-android-sdk/wiki/CodingGuideForUnityInline[Unityプラグイン実装ガイド]
+- link:https://github.com/amoad/amoad-unity-plugin[Unityプラグインデモアプリ]
 
 .Cocos2d-xで開発される方
 - link:https://github.com/amoad/amoad-android-sdk/wiki/SdkInstallForCocos2dx[Cocos2d-xモジュール導入ガイド]
