@@ -12,6 +12,7 @@
 ** インタースティシャル表示改善、SDK安定性向上
 ** プリロール広告キャッシュ機能改善
 ** **[NEW] インライン動画広告サポート**
+** 不具合対応＆動画安定化
 
 NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は link:https://github.com/amoad/amoad-ios-sdk/issues[こちら]まで 。
 
