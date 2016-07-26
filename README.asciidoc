@@ -1,4 +1,4 @@
-= AMoAd SDK Guide for Android
+= AMoAd SDK Guide for Android ver4.8.0
 
 :numbered:
 :sectnums:
