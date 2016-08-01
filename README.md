@@ -2,7 +2,7 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd Android Sdk ver4.8.0
+# AMoAd Android Sdk ver4.8.1
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
@@ -14,6 +14,7 @@
   * プリロール広告キャッシュ機能改善
   * **[NEW] インライン動画広告サポート**
   * 不具合対応＆動画安定化
+  * インタースティシャル広告の不具合対応
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
