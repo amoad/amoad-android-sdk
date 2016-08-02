@@ -56,7 +56,7 @@ public class InterstitialActivity extends HomeButtonActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if (InterstitialAd.isLoaded(mSid)) {
-            InterstitialAd.show(mSid, new InterstitialAd.OnCloseListener() {
+            InterstitialAd.show(InterstitialActivity.this, mSid, new InterstitialAd.OnCloseListener() {
                 @Override
                 public void onClose(InterstitialAd.Result result) {
                     switch (result) {
