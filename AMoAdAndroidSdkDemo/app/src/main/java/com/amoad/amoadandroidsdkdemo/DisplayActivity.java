@@ -24,8 +24,8 @@ public class DisplayActivity extends HomeButtonActivity implements View.OnClickL
         mAdView = new AMoAdView(this);
         mAdView.setSid(mSid);
 
-        ViewGroup bottomPanel = (ViewGroup) findViewById(R.id.panel_bottom);
-        bottomPanel.addView(mAdView);
+        ViewGroup ad = (ViewGroup) findViewById(R.id.ad);
+        ad.addView(mAdView);
     }
 
     private void showAd() {
