@@ -2,7 +2,7 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd Android Sdk ver4.9.0
+# AMoAd Android Sdk ver4.10.0
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
@@ -15,7 +15,8 @@
   * **[NEW] インライン動画広告サポート**
   * 不具合対応＆動画安定化
   * インタースティシャル広告の不具合対応
-  * Viewable Impression対応
+  * ディスプレイ広告とインタースティシャル広告のViewable Impression対応
+  * インフィード広告のViewable Impression対応
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
