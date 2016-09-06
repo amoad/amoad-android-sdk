@@ -195,21 +195,23 @@ public class InfeedActivity extends HomeButtonActivity {
 
         @Override
         public void onBindViewHolder(ItemViewHolder vh, int position) {
+            AdItem adItem = null;
             Object item = mItems.get(position);
             if (item instanceof AdItem) {
-                bindAdItem(vh, (AdItem) item);
+                adItem = (AdItem) item;
+                bindAdItem(vh, adItem);
             } else if (item instanceof MyItem) {
                 bindMyItem(vh, (MyItem) item);
             }
+            InfeedAd.setViewabilityTracking((ViewGroup)vh.itemView, adItem);
         }
 
         private void bindAdItem(ItemViewHolder vh, final AdItem adItem) {
-            adItem.sendImpression(mContext);
-            Picasso.with(mContext).load(adItem.getImageUrl()).fit().into(vh.mImageView);
-            vh.mTitleView.setText(adItem.getTitleShort());
-            vh.mDescriptionView.setText(adItem.getTitleLong());
-            vh.mDateView.setText(adItem.getServiceName());
-            vh.mItemView.setOnClickListener(new View.OnClickListener() {
+            Picasso.with(mContext).load(adItem.getImageUrl()).fit().into(vh.imageView);
+            vh.titleView.setText(adItem.getTitleShort());
+            vh.descriptionView.setText(adItem.getTitleLong());
+            vh.dateView.setText(adItem.getServiceName());
+            vh.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     adItem.onClick(mContext);
@@ -218,11 +220,11 @@ public class InfeedActivity extends HomeButtonActivity {
         }
 
         private void bindMyItem(ItemViewHolder vh, MyItem item) {
-            vh.mImageView.setImageResource(R.drawable.item);
-            vh.mTitleView.setText(item.mTitle);
-            vh.mDescriptionView.setText(item.mDescription);
-            vh.mDateView.setText(item.mDate);
-            vh.mItemView.setOnClickListener(new View.OnClickListener() {
+            vh.imageView.setImageResource(R.drawable.item);
+            vh.titleView.setText(item.mTitle);
+            vh.descriptionView.setText(item.mDescription);
+            vh.dateView.setText(item.mDate);
+            vh.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //...
@@ -232,19 +234,17 @@ public class InfeedActivity extends HomeButtonActivity {
     }
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
-        ImageView mImageView;
-        TextView mTitleView;
-        TextView mDescriptionView;
-        TextView mDateView;
-        View mItemView;
+        ImageView imageView;
+        TextView titleView;
+        TextView descriptionView;
+        TextView dateView;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            mItemView = itemView;
-            mImageView = (ImageView) itemView.findViewById(R.id.imageView);
-            mTitleView = (TextView) itemView.findViewById(R.id.titleView);
-            mDescriptionView = (TextView) itemView.findViewById(R.id.descriptionView);
-            mDateView = (TextView) itemView.findViewById(R.id.dateView);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            titleView = (TextView) itemView.findViewById(R.id.titleView);
+            descriptionView = (TextView) itemView.findViewById(R.id.descriptionView);
+            dateView = (TextView) itemView.findViewById(R.id.dateView);
         }
     }
 
