@@ -62,19 +62,14 @@ public class InfeedActivity extends HomeButtonActivity {
         }
     }
 
-    void clearItems() {
-        mAdapter.clear();
-    }
-
     void refreshItems() {
-        clearItems();
+        mAdapter.clear();
         appendItems(10);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add("AppendItems");
-        menu.add("ClearItems");
         menu.add("RefreshItems");
         return super.onCreateOptionsMenu(menu);
     }
@@ -83,8 +78,6 @@ public class InfeedActivity extends HomeButtonActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if ("AppendItems".equals(item.getTitle())) {
             appendItems(10);
-        } else if ("ClearItems".equals(item.getTitle())) {
-            clearItems();
         } else if ("RefreshItems".equals(item.getTitle())) {
             refreshItems();
         }
@@ -207,7 +200,7 @@ public class InfeedActivity extends HomeButtonActivity {
         }
 
         private void bindAdItem(ItemViewHolder vh, final AdItem adItem) {
-            Picasso.with(mContext).load(adItem.getImageUrl()).fit().into(vh.imageView);
+            Picasso.with(mContext).load(adItem.getIconUrl()).fit().into(vh.imageView);
             vh.titleView.setText(adItem.getTitleShort());
             vh.descriptionView.setText(adItem.getTitleLong());
             vh.dateView.setText(adItem.getServiceName());

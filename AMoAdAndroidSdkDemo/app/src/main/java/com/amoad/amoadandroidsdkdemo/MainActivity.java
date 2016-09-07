@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //AMoAd Sdkのログを出力する
         AMoAdLogger.getInstance().setEnabled(true);
+
         ListView listView = (ListView) findViewById(R.id.listview);
         listView.setAdapter(new ItemAdapter());
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

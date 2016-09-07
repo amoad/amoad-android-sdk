@@ -17,13 +17,12 @@ public class NativeAppActivity extends HomeButtonActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_native_app);
         mSid = getIntent().getStringExtra("sid");
-
-        AMoAdNativeViewManager.getInstance(this).prepareAd(mSid, true, true);
-
         initAd();
     }
 
     private void initAd() {
+        AMoAdNativeViewManager.getInstance(this).prepareAd(mSid, true, true);
+
         View template = getLayoutInflater().inflate(R.layout.item_native, null);
         AMoAdNativeViewManager.getInstance(this).renderAd(mSid, TAG, template);
 
@@ -33,16 +32,16 @@ public class NativeAppActivity extends HomeButtonActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add("update");
-        menu.add("clear");
-        return true;
+        menu.add("Update");
+        menu.add("Clear");
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if ("update".equals(item.getTitle())) {
+        if ("Update".equals(item.getTitle())) {
             update();
-        } else if ("clear".equals(item.getTitle())) {
+        } else if ("Clear".equals(item.getTitle())) {
             clear();
         }
         return super.onOptionsItemSelected(item);

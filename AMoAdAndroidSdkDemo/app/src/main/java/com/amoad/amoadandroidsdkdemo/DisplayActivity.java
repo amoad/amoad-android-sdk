@@ -5,8 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.amoad.AMoAdView;
+import com.amoad.AdCallback;
 
-public class DisplayActivity extends HomeButtonActivity implements View.OnClickListener {
+public class DisplayActivity extends HomeButtonActivity implements View.OnClickListener, AdCallback {
     private AMoAdView mAdView;
     private String mSid;
 
@@ -22,10 +23,15 @@ public class DisplayActivity extends HomeButtonActivity implements View.OnClickL
 
     private void initAd() {
         mAdView = new AMoAdView(this);
+        mAdView.setCallback(this);
+        //mAdView.setNetworkTimeoutMillis(5000);
+        //mAdView.setClickTransition(AMoAdView.ClickTransition.NONE);
+        //mAdView.setRotateTransition(AMoAdView.RotateTransition.ALPHA);
+        mAdView.setResponsiveStyle(true);
         mAdView.setSid(mSid);
 
-        ViewGroup ad = (ViewGroup) findViewById(R.id.ad);
-        ad.addView(mAdView);
+        ViewGroup adLayout = (ViewGroup) findViewById(R.id.ad_layout);
+        adLayout.addView(mAdView);
     }
 
     private void showAd() {
@@ -45,5 +51,20 @@ public class DisplayActivity extends HomeButtonActivity implements View.OnClickL
             case R.id.btn_show:
                 showAd();
         }
+    }
+
+    @Override
+    public void didFailToReceiveAdWithError() {
+        //広告取得の失敗
+    }
+
+    @Override
+    public void didReceiveEmptyAd() {
+        //空広告
+    }
+
+    @Override
+    public void didReceiveAd() {
+        //広告取得の成功
     }
 }

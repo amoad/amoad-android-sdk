@@ -18,12 +18,12 @@ public class ScreenActivity extends HomeButtonActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen);
         mSid = getIntent().getStringExtra("sid");
-
-        NativePreRoll.prepareAd(this, mSid);
         initAd();
     }
 
     private void initAd() {
+        NativePreRoll.prepareAd(this, mSid);
+
         Analytics analytics = new Analytics("00000");
         analytics.setParameter("manga_id", "11111");
         analytics.setParameter("magazine_id", "22222");
