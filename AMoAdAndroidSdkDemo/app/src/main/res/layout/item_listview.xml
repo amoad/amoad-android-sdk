@@ -9,7 +9,7 @@
         android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:tag="AMoAdNativeViewMainImage"
+        android:tag="AMoAdNativeViewIconImage"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"/>
 
@@ -22,8 +22,9 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/imageView"
         android:ellipsize="end"
-        android:textColor="#000"
+        android:text="Hello"
         android:tag="AMoAdNativeViewTitleShort"
+        android:textColor="#000"
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <TextView
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleView"
         android:layout_marginLeft="10dp"
+        android:text="Hello world"
         android:layout_toRightOf="@+id/imageView"
         android:ellipsize="end"
         android:textColor="#000"
