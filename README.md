@@ -2,22 +2,14 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd Android Sdk ver4.10.1
+# AMoAd SDK for Android ver 5.0.0
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * インタースティシャル動画広告配信に対応しました。
-  * インタースティシャル表示改善、SDK安定性向上
-  * プリロール広告キャッシュ機能改善
-  * インライン動画広告サポート
-  * 不具合対応＆動画安定化
-  * インタースティシャル広告の不具合対応
-  * **[NEW]ディスプレイ広告とインタースティシャル広告のViewable Impression対応**
-  * **[NEW]インフィード広告とスクリーン広告のViewable Impression対応**
-  * **[NEW]アニメーションGif表示クラッシュの修正 **
+  * インフィード AfiO 広告配信に対応しました
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
@@ -43,7 +35,7 @@
 Android 2.3 or later
 
 ## その他
-NOTE: AMoAd SDKに関する技術的なお問い合わせ・ご要望は [こちら](https://github.com/amoad/amoad-ios-sdk/issues)まで 。
+AMoAd SDKに関する技術的なお問い合わせ・ご要望は [こちら](https://github.com/amoad/amoad-ios-sdk/issues) まで 。
 
 - [AMoAd iOS SDK](https://github.com/amoad/amoad-ios-sdk)
 - [AMoAd Unity Plugin](https://github.com/amoad/amoad-unity-plugin)
