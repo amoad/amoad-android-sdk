@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:tag="AMoAdNativeViewTitleLong"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <com.amoad.amoadandroidsdkdemo.FixedAspectRatioFrameLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:aspect_ratio="1:1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="AMoAdNativeViewIconImage" />
+
+        </com.amoad.amoadandroidsdkdemo.FixedAspectRatioFrameLayout>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:tag="AMoAdNativeViewTitleShort"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <com.amoad.amoadandroidsdkdemo.FixedAspectRatioFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:aspect_ratio="16:9">
+
+        <com.amoad.AMoAdNativeMainVideoView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="AMoAdNativeViewMainVideo" />
+
+    </com.amoad.amoadandroidsdkdemo.FixedAspectRatioFrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <com.amoad.amoadandroidsdkdemo.FixedAspectRatioFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:aspect_ratio="640:100">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/button_selector"
+            android:tag="AMoAdNativeViewLink" />
+
+    </com.amoad.amoadandroidsdkdemo.FixedAspectRatioFrameLayout>
+
+</LinearLayout>

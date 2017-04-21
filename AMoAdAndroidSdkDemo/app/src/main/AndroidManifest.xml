@@ -42,6 +42,9 @@
             android:name=".NativeHtmlActivity"
             android:label="NativeHtml AD" />
         <activity
+            android:name=".InFeedAfioActivity"
+            android:label="InFeed AfiO AD" />
+        <activity
             android:name=".NativeAppActivity"
             android:label="NativeApp AD" />
         <activity
