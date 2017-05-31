@@ -2,14 +2,23 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.0.1
+# AMoAd SDK for Android ver 5.0.90 (preview)
 
-- [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
+- [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/v5.1-preview.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
-* [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * インフィード AfiO 広告配信に対応しました
+
+広告クリック時に LP を WebView で開く機能を追加しました。
+( 対象: ネイティブ App 広告 / リストビュー広告 )
+
+### 設定方法
+
+`createView` メソッドまたは `renderAd` メソッドの tag に "OpenInWebView" で始まる文字列を指定すると、その広告はクリック時に WebView で LP を表示します。
+*( これは暫定的な設定方法です。正式リリース版では変更される可能性があります。 )*
+
+- [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
+
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
