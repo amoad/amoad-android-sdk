@@ -2,14 +2,15 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.0.1
+# AMoAd SDK for Android ver 5.1.0
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * インフィード AfiO 広告配信に対応しました
+  * インフィード AfiO 広告の機能追加を行いました
+  * 対応環境を Android 4.0 以上に引き上げました
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
@@ -32,7 +33,7 @@
 </div>
 
 ## 対応環境
-Android 2.3 or later
+Android 4.0 or later
 
 ## その他
 AMoAd SDKに関する技術的なお問い合わせ・ご要望は [こちら](https://github.com/amoad/amoad-ios-sdk/issues) まで 。
