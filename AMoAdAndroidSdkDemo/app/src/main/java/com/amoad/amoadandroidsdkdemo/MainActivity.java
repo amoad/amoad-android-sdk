@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         ITEMS.add(new Object[]{"NativeHtml広告", NativeHtmlActivity.class});
         ITEMS.add(new Object[]{"Screen広告", ScreenActivity.class});
         ITEMS.add(new Object[]{"InFeedAfiO広告", InFeedAfioActivity.class});
+        ITEMS.add(new Object[]{"InterstitialAfiO広告", InterstitialAfioActivity.class});
         ITEMS.add(new Object[]{"NativeApp広告", NativeAppActivity.class});
         ITEMS.add(new Object[]{"ListView広告", ListViewActivity.class});
     }
