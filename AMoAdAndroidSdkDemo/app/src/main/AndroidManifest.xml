@@ -45,11 +45,16 @@
             android:name=".InFeedAfioActivity"
             android:label="InFeed AfiO AD" />
         <activity
+            android:name=".InterstitialAfioActivity"
+            android:label="Interstitial AfiO AD" />
+        <activity
             android:name=".NativeAppActivity"
             android:label="NativeApp AD" />
         <activity
             android:name=".ListViewActivity"
             android:label="ListView AD" />
+
+        <activity android:name="com.amoad.AMoAdInterstitialVideoActivity" />
     </application>
 
 </manifest>
