@@ -2,7 +2,7 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.0
+# AMoAd SDK for Android ver 5.2.1
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
