@@ -55,6 +55,7 @@
             android:label="ListView AD" />
 
         <activity android:name="com.amoad.AMoAdInterstitialVideoActivity" />
+        <activity android:name="com.amoad.AMoAdPlayableActivity"/>
     </application>
 
 </manifest>
