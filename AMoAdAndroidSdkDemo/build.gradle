@@ -10,9 +10,6 @@ buildscript {
         maven {
             url 'https://github.com/amoad/amoad-android-sdk-maven/raw/master/'
         }
-        flatDir{
-            dirs 'libs'
-        }
         google()
     }
     dependencies {
@@ -32,9 +29,6 @@ allprojects {
         }
         maven {
             url 'https://github.com/amoad/amoad-android-sdk-maven/raw/master/'
-        }
-        flatDir{
-            dirs 'libs'
         }
     }
 }
