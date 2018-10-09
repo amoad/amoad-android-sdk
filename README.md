@@ -2,15 +2,15 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.1
+# AMoAd SDK for Android ver 5.2.2
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * インタースティシャル AfiO 広告配信に対応しました
-  * プレイアブル広告配信に対応しました
+  * ファイル形式をaarに変更しました。
+  * gradleによるライブラリのインストールに対応しました。
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
