@@ -3,6 +3,8 @@ package com.amoad.amoadandroidsdkdemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.amoad.AMoAdBuildConfig;
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
