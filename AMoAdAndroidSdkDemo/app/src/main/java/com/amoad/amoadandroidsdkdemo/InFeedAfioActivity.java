@@ -1,14 +1,16 @@
 package com.amoad.amoadandroidsdkdemo;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.amoad.AMoAdNativeListener;
+import com.amoad.AMoAdNativeMainVideoView;
 import com.amoad.AMoAdNativeViewManager;
 
-public class InFeedAfioActivity extends HomeButtonActivity implements AMoAdNativeListener {
+public class InFeedAfioActivity extends HomeButtonActivity implements AMoAdNativeListener, AMoAdNativeMainVideoView.Listener {
     private static final String TAG = "ad1";
 
     private View mAdView;
@@ -43,6 +45,10 @@ public class InFeedAfioActivity extends HomeButtonActivity implements AMoAdNativ
         AMoAdNativeViewManager.getInstance(this).prepareAd(mSid, true, true);
         // 広告取得
         AMoAdNativeViewManager.getInstance(this).renderAd(mSid, TAG, view, this);
+
+        // AMoAdNativeMainVideoViewを取得
+        AMoAdNativeMainVideoView videoView = mAdView.findViewWithTag("AMoAdNativeViewMainVideo");
+        videoView.setListener(this);
     }
 
     @Override
@@ -70,5 +76,20 @@ public class InFeedAfioActivity extends HomeButtonActivity implements AMoAdNativ
         mAdView.setVisibility(View.INVISIBLE);
         // 広告更新
         AMoAdNativeViewManager.getInstance(this).updateAd(mSid, TAG);
+    }
+
+    @Override
+    public void onStart(AMoAdNativeMainVideoView aMoAdNativeMainVideoView) {
+        Log.d("debug","動画再生開始");
+    }
+
+    @Override
+    public void onComplete(AMoAdNativeMainVideoView aMoAdNativeMainVideoView) {
+        Log.d("debug","動画再生完了");
+    }
+
+    @Override
+    public void onFailed(AMoAdNativeMainVideoView aMoAdNativeMainVideoView) {
+        Log.d("debug","動画再生失敗");
     }
 }
