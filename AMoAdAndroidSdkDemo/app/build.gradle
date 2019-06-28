@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.amoad:amoad-sdk:5.2.3'
+    implementation 'com.amoad:amoad-sdk:+'
     implementation('com.google.android.gms:play-services-ads:16.0.0') {
         exclude group: 'com.android.support'
     }
