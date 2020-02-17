@@ -2,14 +2,15 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.11
+# AMoAd SDK for Android ver 5.2.13
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * ネイティブ広告のインフォメーションマークタップ時にクラッシュするケースがあったので修正しました。
+  * プリロール広告のリンクボタンレンダリングタイミングの修正
+  * コピーライト表記の修正
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
