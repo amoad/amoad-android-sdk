@@ -28,7 +28,7 @@ public class ScreenActivity extends HomeButtonActivity {
         analytics.setParameter("manga_id", "11111");
         analytics.setParameter("magazine_id", "22222");
         analytics.setParameter("content_id", "33333");
-        NativePreRoll.renderAd(this, mSid, TAG, (FrameLayout) (findViewById(R.id.ad)), analytics, new OnReceiveListener() {
+        NativePreRoll.renderAd(this, mSid, TAG, (FrameLayout) (findViewById(R.id.ad)), analytics, true, new OnReceiveListener() {
             @Override
             public void onReceive(String sid, AMoAdResult result) {
                 switch (result.result) {
