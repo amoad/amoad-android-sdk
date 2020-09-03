@@ -2,14 +2,15 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.17
+# AMoAd SDK for Android ver 5.2.18
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * リファクタリング
+  * ネイティブ広告でアニメーションGIFに対応
+  * プリロール広告のCTA位置を変更
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
