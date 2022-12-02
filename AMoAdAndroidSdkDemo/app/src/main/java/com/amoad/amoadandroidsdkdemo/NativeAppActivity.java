@@ -24,7 +24,7 @@ public class NativeAppActivity extends HomeButtonActivity {
         AMoAdNativeViewManager.getInstance(this).prepareAd(mSid, true, true);
 
         View template = getLayoutInflater().inflate(R.layout.item_native, null);
-        AMoAdNativeViewManager.getInstance(this).renderAd(mSid, TAG, template);
+        AMoAdNativeViewManager.getInstance(this).renderAd(mSid, TAG, template, null, null, null, null);
 
         ViewGroup vg = (ViewGroup) findViewById(R.id.ad);
         vg.addView(template);
