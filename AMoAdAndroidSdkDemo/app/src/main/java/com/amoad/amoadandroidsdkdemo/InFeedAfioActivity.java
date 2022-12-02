@@ -44,7 +44,7 @@ public class InFeedAfioActivity extends HomeButtonActivity implements AMoAdNativ
         // 広告準備
         AMoAdNativeViewManager.getInstance(this).prepareAd(mSid, true, true);
         // 広告取得
-        AMoAdNativeViewManager.getInstance(this).renderAd(mSid, TAG, view, this);
+        AMoAdNativeViewManager.getInstance(this).renderAd(mSid, TAG, view, null, this, null, null);
 
         // AMoAdNativeMainVideoViewを取得
         AMoAdNativeMainVideoView videoView = mAdView.findViewWithTag("AMoAdNativeViewMainVideo");
