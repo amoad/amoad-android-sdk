@@ -28,7 +28,7 @@ public class ListViewActivity extends HomeButtonActivity {
         AMoAdNativeViewManager.getInstance(this).prepareAd(mSid, 1, 5, true, false);
 
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
-        mNativeAdAdapter = AMoAdNativeViewManager.getInstance(this).createAdapter(mSid, TAG, mAdapter, R.layout.item_listview);
+        mNativeAdAdapter = AMoAdNativeViewManager.getInstance(this).createAdapter(mSid, TAG, mAdapter, R.layout.item_listview, null, null);
         ListView listview = (ListView) findViewById(R.id.listview);
         listview.setAdapter(mNativeAdAdapter);
     }
