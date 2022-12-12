@@ -8,7 +8,7 @@ buildscript {
             name 'Google'
         }
         maven {
-            url 'https://github.com/amoad/amoad-android-sdk-maven/raw/master/'
+            url 'https://raw.githubusercontent.com/amoad/amoad-android-sdk-maven/feature/v5.2.20/'
         }
         google()
     }

@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.amoad:amoad-sdk:+'
+    implementation 'com.amoad:amoad-sdk:5.2.20'
     implementation 'com.google.android.gms:play-services-ads:16.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
