@@ -10,7 +10,7 @@
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
   * TargetSDKVersionをAPIレベル31に変更
-  * play-services-ads-identifierの依存関係を内部的に解決するように修正
+  * play-services-adsの依存関係を内部的に解決するように修正
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
