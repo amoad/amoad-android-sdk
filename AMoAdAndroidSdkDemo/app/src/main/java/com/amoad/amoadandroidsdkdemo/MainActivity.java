@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.amoad.AMoAdBuildConfig;
 import com.amoad.AMoAdLogger;
 
 import java.util.ArrayList;
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         //AMoAd Sdkのログを出力する
         AMoAdLogger.getInstance().setEnabled(true);
-        AMoAdBuildConfig.toStaging();
 
         ListView listView = (ListView) findViewById(R.id.listview);
         listView.setAdapter(new ItemAdapter());
