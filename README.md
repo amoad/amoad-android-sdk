@@ -2,14 +2,15 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.19
+# AMoAd SDK for Android ver 5.2.20
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * InfeedAfioで一度InViewから外れて再度描画した際,途中から動画再生されるように修正
+  * TargetSDKVersionをAPIレベル31に変更
+  * play-services-ads-identifierの依存関係を内部的に解決するように修正
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
