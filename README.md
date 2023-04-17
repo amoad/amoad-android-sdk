@@ -2,15 +2,14 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.20
+# AMoAd SDK for Android ver 5.2.21
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * TargetSDKVersionをAPIレベル31に変更
-  * play-services-adsの依存関係を内部的に解決するように修正
+  * インタースティシャルAfio広告で動画サイズに応じて画面の向きを変更刷る処理を削除
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
