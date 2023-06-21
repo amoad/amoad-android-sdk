@@ -2,14 +2,16 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.21
+# AMoAd SDK for Android ver 5.2.22
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * インタースティシャルAfio広告で動画サイズに応じて画面の向きを変更刷る処理を削除
+  * インタースティシャルAfio広告の修正
+    * 動画再生途中でもクリックできる用に修正
+  * バックグランドから回帰した際、動画が真っ暗になる不具合を修正
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
