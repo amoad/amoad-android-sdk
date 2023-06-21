@@ -6,15 +6,16 @@
 <title>APIヘルプ (AMoAd SDK)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -97,7 +98,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="contentContainer">
 <ul class="blockList">
 <li class="blockList">
-<section role="region">
+<section>
 <h2>パッケージ</h2>
 <p>各パッケージには、そのパッケージのクラスおよびインタフェースのリストと、それぞれの概要を含むページがあります。これらのページは6つのカテゴリで構成されます。</p>
 <ul>
@@ -111,7 +112,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>クラスまたはインタフェース</h2>
 <p>各クラス、インタフェース、ネストされたクラスおよびネストされたインタフェースには個別のページがあります。各ページには次のように、クラスまたはインタフェースの説明と、概要表およびメンバーの詳細説明が含まれます。</p>
 <ul>
@@ -141,7 +142,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>注釈型</h2>
 <p>各注釈型には、それ自身の個別のページと次のセクションがあります:</p>
 <ul>
@@ -154,7 +155,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>列挙型</h2>
 <p>各列挙型には、それ自身の個別のページと次のセクションがあります:</p>
 <ul>
@@ -166,7 +167,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>階層ツリー(クラス階層)</h2>
 <p>すべてのパッケージには<a href="overview-tree.html">クラス階層</a>ページがあり、さらに各パッケージの階層があります。各階層ページは、クラスのリストとインタフェースのリストを含みます。クラスは<code>java.lang.Object</code>を開始点とする継承構造で編成されます。インタフェースは、<code>java.lang.Object</code>からは継承しません。</p>
 <ul>
@@ -176,37 +177,37 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>推奨されていないAPI</h2>
 <p><a href="deprecated-list.html">推奨されていないAPI</a>ページは、推奨されていないすべてのAPIのリストを表示します。非推奨APIとは、機能改良などの理由から使用をお薦めできなくなったAPIのことで、通常はそれに代わるAPIが提供されます。非推奨APIは今後の実装で削除される可能性があります。</p>
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>索引</h2>
 <p><a href="index-all.html">索引</a>には、すべてのクラス、インタフェース、コンストラクタ、メソッドおよびフィールドのアルファベット順のインデックスと、すべてのパッケージおよびすべてのクラスのリストが含まれます。</p>
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>すべてのクラス</h2>
 <p><a href="allclasses.html">すべてのクラス</a>リンクには、すべてのクラスおよびインタフェース(非staticのネストされた型を除く)が表示されます。</p>
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>直列化された形式</h2>
 <p>直列化可能または外部化可能な各クラスは、直列化フィールドとメソッドの説明を含みます。この情報は、APIを使用する開発者ではなく、再実装を行う担当者に役立ちます。ナビゲーション・バーにリンクがない場合、直列化されたクラスに移動して、クラス記述の「関連項目」セクションにある「直列化された形式」をクリックすることにより、この情報を表示できます。</p>
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>定数フィールド値</h2>
 <p><a href="constant-values.html">定数フィールド値</a>ページには、static finalフィールドとその値のリストがあります。</p>
 </section>
 </li>
 <li class="blockList">
-<section role="region">
+<section>
 <h2>検索</h2>
 <p>モジュール、パッケージ、タイプ、フィールド、メソッド、およびAPIで定義されているその他の語を、名前の一部または全体を使用して検索できます。キャメルケースの省略形がサポートされています: たとえば、"InpStr"と指定すると"InputStream"と"InputStreamReader"が検索されます。</p>
 </section>
