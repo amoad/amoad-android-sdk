@@ -2,14 +2,14 @@
 <img width="172" height="61" src="http://www.amoad.com/images/logo.png">
 </div>
 
-# AMoAd SDK for Android ver 5.2.25
+# AMoAd SDK for Android ver 5.2.26
 
 - [ZIPをダウンロード](https://github.com/amoad/amoad-android-sdk/archive/master.zip)
 - [ドキュメント](https://github.com/amoad/amoad-android-sdk/wiki)
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * 動画再生時の不具合を修正
+  * バナー広告のキャッシュを削除できる機能を追加
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
