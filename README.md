@@ -9,7 +9,7 @@
 
 ## 更新情報
 * [リリース履歴](https://github.com/amoad/amoad-android-sdk/releases)
-  * インターステシャル動画広告が閉じられた際一部コールバックを呼ばれない不具合を修正
+  * 画面回転時にonDismissedコールバックが発火してしまう不具合を修正
 
 ## Demo
 * デモ画面に遷移してsidを入力すると広告の表示ができます。
